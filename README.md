@@ -1,0 +1,2 @@
+# pictor
+Minimalist SCSS boilerplate
