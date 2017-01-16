@@ -1,0 +1,203 @@
+// Text
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.uppercase { text-transform: uppercase; }
+
+
+// Sizing and positioning
+.expand   { width: 100%; height: 100%; }
+.expand-x { width:  100%; }
+.expand-y { height: 100%; }
+
+.overflow   { overflow: auto; }
+.overflow-x { overflow-x: auto; }
+.overflow-y { overflow-y: auto; }
+
+.overflow-hidden   { overflow: hidden; }
+.overflow-x-hidden { overflow-x: hidden; }
+.overflow-y-hidden { overflow-y: hidden; }
+
+.clearfix { &, &:before, &:after { clear: both; } }
+
+.valign-top { vertical-align: top;}
+.valign-middle { vertical-align: middle;}
+.valign-bottom { vertical-align: bottom;}
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+
+.display-none, .hide { display: none; }
+.display-block, .show { display: block; }
+.display-inline-block, .show-inline-block { display: inline-block; }
+.display-inline, .show-inline { display: inline; }
+
+.float-left { float: left; }
+.float-right { float: right; }
+
+.element-center { margin-left: auto; margin-right: auto; }
+
+
+// Border radius
+.border-radius { border-radius: $border-radius; }
+.border-radius-x2 { border-radius: $border-radius*2; }
+.border-radius-x3 { border-radius: $border-radius*3; }
+.border-radius-x4 { border-radius: $border-radius*4; }
+.border-radius-x5 { border-radius: $border-radius*5; }
+
+.attach-bottom {
+    border-top-left-radius:  0;
+    border-top-right-radius:  0;
+}
+.attach-top {
+    border-bottom-left-radius:  0;
+    border-bottom-right-radius:  0;
+}
+.attach-left {
+    border-bottom-right-radius:  0;
+    border-top-right-radius:  0;
+}
+.attach-right {
+    border-bottom-left-radius:  0;
+    border-top-left-radius:  0;
+}
+.attach-top-right {
+    border-bottom-right-radius:  0;
+    border-bottom-left-radius:  0;
+    border-top-left-radius:  0;
+}
+.attach-top-left {
+    border-bottom-right-radius:  0;
+    border-bottom-left-radius:  0;
+    border-top-right-radius:  0;
+}
+.attach-bottom-right {
+    border-top-right-radius:  0;
+    border-top-left-radius:  0;
+    border-bottom-left-radius:  0;
+}
+.attach-bottom-left {
+    border-top-right-radius:  0;
+    border-top-left-radius:  0;
+    border-bottom-right-radius:  0;
+}
+
+.border-radius-none {
+    border-radius: 0;
+}
+
+$tiny: $font-size * $minor-second * 0.25;
+$small: $font-size * $minor-second * 0.5;
+$medium: $font-size * $minor-second * 0.75;
+$large: $font-size * $minor-second;
+$huge: $font-size * $minor-second * 1.5;
+
+// Spacing
+.margin-tiny { margin: $tiny; }
+.margin-small { margin: $small; }
+.margin-medium { margin: $medium; }
+.margin-large { margin: $large; }
+.margin-huge { margin: $huge; }
+
+.margin-left-tiny { margin-left: $tiny; }
+.margin-left-small { margin-left: $small; }
+.margin-left-medium { margin-left: $medium; }
+.margin-left-large { margin-left: $large; }
+.margin-left-huge { margin-left: $huge; }
+
+.margin-right-tiny { margin-right: $tiny; }
+.margin-right-small { margin-right: $small; }
+.margin-right-medium { margin-right: $medium; }
+.margin-right-large { margin-right: $large; }
+.margin-right-huge { margin-right: $huge; }
+
+.margin-bottom-tiny { margin-bottom: $tiny; }
+.margin-bottom-small { margin-bottom: $small; }
+.margin-bottom-medium { margin-bottom: $medium; }
+.margin-bottom-large { margin-bottom: $large; }
+.margin-bottom-huge { margin-bottom: $huge; }
+
+.margin-top-tiny { margin-top: $tiny; }
+.margin-top-small { margin-top: $small; }
+.margin-top-medium { margin-top: $medium; }
+.margin-top-large { margin-top: $large; }
+.margin-top-huge { margin-top: $huge; }
+
+
+.padding-tiny { padding: $tiny; }
+.padding-small { padding: $small; }
+.padding-medium { padding: $medium; }
+.padding-large { padding: $large; }
+.padding-huge { padding: $huge; }
+
+.padding-left-tiny { padding-left: $tiny; }
+.padding-left-small { padding-left: $small; }
+.padding-left-medium { padding-left: $medium; }
+.padding-left-large { padding-left: $large; }
+.padding-left-huge { padding-left: $huge; }
+
+.padding-right-tiny { padding-right: $tiny; }
+.padding-right-small { padding-right: $small; }
+.padding-right-medium { padding-right: $medium; }
+.padding-right-large { padding-right: $large; }
+.padding-right-huge { padding-right: $huge; }
+
+.padding-bottom-tiny { padding-bottom: $tiny; }
+.padding-bottom-small { padding-bottom: $small; }
+.padding-bottom-medium { padding-bottom: $medium; }
+.padding-bottom-large { padding-bottom: $large; }
+.padding-bottom-huge { padding-bottom: $huge; }
+
+.padding-top-tiny { padding-top: $tiny; }
+.padding-top-small { padding-top: $small; }
+.padding-top-medium { padding-top: $medium; }
+.padding-top-large { padding-top: $large; }
+.padding-top-huge { padding-top: $huge; }
+
+
+.margin-none { margin: 0; }
+.margin-left-none { margin-left: 0; }
+.margin-right-none { margin-right: 0; }
+.margin-bottom-none { margin-bottom: 0; }
+.margin-top-none { margin-top: 0; }
+.padding-none { padding: 0; }
+.padding-left-none { padding-left: 0; }
+.padding-right-none { padding-right: 0; }
+.padding-bottom-none { padding-bottom: 0; }
+.padding-top-none { padding-top: 0; }
+
+.cursor-auto            { cursor: auto; }
+.cursor-default         { cursor: default; }
+.cursor-none            { cursor: none; }
+.cursor-context-menu    { cursor: context-menu; }
+.cursor-help            { cursor: help; }
+.cursor-pointer         { cursor: pointer; }
+.cursor-progress        { cursor: progress; }
+.cursor-wait            { cursor: wait; }
+.cursor-cell            { cursor: cell; }
+.cursor-crosshair       { cursor: crosshair; }
+.cursor-text            { cursor: text; }
+.cursor-vertical-text   { cursor: vertical-text; }
+.cursor-alias           { cursor: alias; }
+.cursor-copy            { cursor: copy; }
+.cursor-move            { cursor: move; }
+.cursor-no-drop         { cursor: no-drop; }
+.cursor-not-allowed     { cursor: not-allowed; }
+.cursor-all-scroll      { cursor: all-scroll; }
+.cursor-col-resize      { cursor: col-resize; }
+.cursor-row-resize      { cursor: row-resize; }
+.cursor-n-resize        { cursor: n-resize; }
+.cursor-e-resize        { cursor: e-resize; }
+.cursor-s-resize        { cursor: s-resize; }
+.cursor-w-resize        { cursor: w-resize; }
+.cursor-ns-resize       { cursor: ns-resize; }
+.cursor-ew-resize       { cursor: ew-resize; }
+.cursor-ne-resize       { cursor: ne-resize; }
+.cursor-nw-resize       { cursor: nw-resize; }
+.cursor-se-resize       { cursor: se-resize; }
+.cursor-sw-resize       { cursor: sw-resize; }
+.cursor-nesw-resize     { cursor: nesw-resize; }
+.cursor-nwse-resize     { cursor: nwse-resize; }

@@ -1,0 +1,156 @@
+$all-input-fields: "[type='color'], [type='date'], [type='datetime'], [type='datetime-local'], [type='email'], [type='month'], [type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='time'], [type='url'], [type='week'], input:not([type]), textarea, select";
+
+
+@mixin color-inputs ($font-color, $border-color, $background-color, $shadow-color) {
+
+    background-color: $background-color;
+    color: $font-color;
+    border-color: $border-color;
+    box-shadow: 0 5px 10px -2px rgba($black0, 0.25);
+
+    &:hover {
+        border-color: lighten($border-color, 15%);
+    }
+
+    &:focus {
+        border-color: lighten($border-color, 30%);
+        box-shadow: 0 5px 10px -2px rgba($shadow-color, 1);
+        outline: none;
+    }
+
+    &::placeholder {
+        color: rgba(desaturate($font-color, 10%), 0.5);
+    }
+
+    &:disabled {
+        background-color: desaturate($background-color, 15%);
+        cursor: not-allowed;
+        color: desaturate($font-color, 35%);
+    }
+}
+
+fieldset {
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    font-weight: 600;
+    margin-bottom: $small-spacing / 2;
+    padding: 0;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: $small-spacing / 2;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    font-family: $font-family;
+    font-size: $font-size;
+}
+
+#{$all-input-fields} {
+
+    border: $border;
+    border-radius: $border-radius;
+    box-shadow: 0 5px 10px -2px darken($background-color, 20%);
+    box-sizing: border-box;
+    margin-bottom: $small-spacing;
+    padding: $spacing / 3;
+    transition: border-color $duration $timing;
+    width: 100%;
+
+    @include color-inputs($black-font, $dark-gray, $black, $black0);
+
+}
+
+textarea {
+    resize: vertical;
+}
+
+[type="search"] {
+    appearance: none;
+}
+
+[type="checkbox"],
+[type="radio"] {
+    display: inline;
+    margin-right: $small-spacing / 2;
+}
+
+[type="file"] {
+    margin-bottom: $small-spacing;
+    width: 100%;
+}
+
+select {
+    margin-bottom: $spacing;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+}
+
+.field {
+    margin-bottom: $font-size;
+
+
+    &.info {
+        label { color: $info-color; }
+        #{$all-input-fields} {
+            @include color-inputs($info-color-font, $info-color, mix($info-color, $background-color, 30%), darken($info-color, 20%));
+        }
+    }
+
+    &.warning {
+        label { color: $warning-color; }
+        #{$all-input-fields} {
+            @include color-inputs($warning-color-font, $warning-color, mix($warning-color, $background-color, 30%), darken($warning-color, 20%));
+        }
+    }
+
+    &.success {
+        label { color: $success-color; }
+        #{$all-input-fields} {
+            @include color-inputs($success-color-font, $success-color, mix($success-color, $background-color, 30%), darken($success-color, 20%));
+        }
+    }
+
+    &.error {
+        label { color: $error-color; }
+        #{$all-input-fields} {
+            @include color-inputs($error-color-font, $error-color, mix($error-color, $background-color, 30%), darken($error-color, 20%));
+        }
+    }
+
+}
+
+.select {
+    position: relative;
+    &:before {
+        $selectSize: ($spacing / 3)*2 + $font-size;
+        font-family: 'FontAwesome';
+        content: '\f0d7';
+        position: absolute;
+        top: 0; right: 0;
+        text-align: center;
+        line-height: $selectSize;
+        height: $selectSize;
+        width: $selectSize;
+
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+// Base colors | Base font color when color used as bg
+$black0: #000;        $black0-font: #fff;
+$black: #161616;      $black-font: #fff;
+$white: #f2f2f2;      $white-font: $black;
+$white0: #fff;        $white0-font: $black0;
+$dark-gray: #444;     $dark-gray-font: $white;
+$medium-gray: #999;   $medium-gray-font: $white;
+$light-gray: #ddd;    $light-gray-font: $black;
+$red: #BE1E2D;        $red-font: $white;
+$pink: #E91E63;       $pink-font: $white;
+$purple: #9C27B0;     $purple-font: $white;
+$magenta: #8D0034;    $magenta-font: $white;
+$indigo: #3F51B5;     $indigo-font: $white;
+$blue: #2196F3;       $blue-font: $white;
+$cyan: #00BCD4;       $cyan-font: $black;
+$green: #4CAF50;      $green-font: $white;
+$lime: #CDDC39;       $lime-font: $black;
+$yellow: #FFEB3B;     $yellow-font: $black;
+$orange: #FF9800;     $orange-font: $black;
+$red-orange: #FF5722; $red-orange-font: $white;
+
+// Action colors
+$primary-color: $blue;          $primary-color-font: $white;
+$secondary-color: $dark-gray;   $secondary-color-font: $white;
+$default-color: $medium-gray;   $default-color-font: $white;
+
+$success-color: mix($green, $black, 65%);   $success-color-font: $white;
+$error-color: mix($red, $black, 65%);       $error-color-font: $white;
+$warning-color: mix($yellow, $black, 65%);  $warning-color-font: $white;
+$info-color: mix($blue, $black, 65%);       $info-color-font: $white;
+
+.black-border { border-color: $black; }
+.white-border { border-color: $white; }
+.black0-border { border-color: $black0; }
+.white0-border { border-color: $white0; }
+.dark-gray-border { border-color: $dark-gray; }
+.medium-gray-border { border-color: $medium-gray; }
+.light-gray-border { border-color: $light-gray; }
+.red-border { border-color: $red; }
+.pink-border { border-color: $pink; }
+.purple-border { border-color: $purple; }
+.magenta-border { border-color: $magenta; }
+.indigo-border { border-color: $indigo; }
+.blue-border { border-color: $blue; }
+.cyan-border { border-color: $cyan; }
+.green-border { border-color: $green; }
+.lime-border { border-color: $lime; }
+.yellow-border { border-color: $yellow; }
+.orange-border { border-color: $orange; }
+.red-orange-border { border-color: $red; }
+.primary-border { border-color: $primary-color; }
+.secondary-border { border-color: $secondary-color; }
+.default-border { border-color: $default-color; }
+.success-border { border-color: $success-color; }
+.error-border { border-color: $error-color; }
+.warning-border { border-color: $warning-color; }
+.info-border { border-color: $info-color; }
+
+.black-text { color: $black; }
+.white-text { color: $white; }
+.black0-text { color: $black0; }
+.white0-text { color: $white0; }
+.dark-gray-text { color: $dark-gray; }
+.medium-gray-text { color: $medium-gray; }
+.light-gray-text { color: $light-gray; }
+.red-text { color: $red; }
+.pink-text { color: $pink; }
+.purple-text { color: $purple; }
+.magenta-text { color: $magenta; }
+.indigo-text { color: $indigo; }
+.blue-text { color: $blue; }
+.cyan-text { color: $cyan; }
+.green-text { color: $green; }
+.lime-text { color: $lime; }
+.yellow-text { color: $yellow; }
+.orange-text { color: $orange; }
+.red-orange-text { color: $red; }
+.primary-text { color: $primary-color; }
+.secondary-text { color: $secondary-color; }
+.default-text { color: $default-color; }
+.success-text { color: $success-color; }
+.error-text { color: $error-color; }
+.warning-text { color: $warning-color; }
+.info-text { color: $info-color; }
+
+.black-bg { background-color: $black; }
+.white-bg { background-color: $white; }
+.black0-bg { background-color: $black0; }
+.white0-bg { background-color: $white0; }
+.dark-gray-bg { background-color: $dark-gray; }
+.medium-gray-bg { background-color: $medium-gray; }
+.light-gray-bg { background-color: $light-gray; }
+.red-bg { background-color: $red; }
+.pink-bg { background-color: $pink; }
+.purple-bg { background-color: $purple; }
+.magenta-bg { background-color: $magenta; }
+.indigo-bg { background-color: $indigo; }
+.blue-bg { background-color: $blue; }
+.cyan-bg { background-color: $cyan; }
+.green-bg { background-color: $green; }
+.lime-bg { background-color: $lime; }
+.yellow-bg { background-color: $yellow; }
+.orange-bg { background-color: $orange; }
+.red-orange-bg { background-color: $red; }
+.primary-bg { background-color: $primary-color; }
+.secondary-bg { background-color: $secondary-color; }
+.default-bg { background-color: $default-color; }
+.success-bg { background-color: $success-color; }
+.error-bg { background-color: $error-color; }
+.warning-bg { background-color: $warning-color; }
+.info-bg { background-color: $info-color; }

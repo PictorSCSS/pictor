@@ -1,0 +1,99 @@
+@mixin button-spacing($num)  {
+  padding: $small-spacing*$num $spacing*$num;
+}
+
+@mixin icon-button-spacing($num)  {
+  padding: $spacing*$num;
+}
+
+@mixin button-color($color, $color-font) {
+
+    background-color: $color;
+    border-color: $color;
+    border-width: $font-size/4;
+    color: $color-font;
+
+    &.selected, &.checked, &:hover, &:focus {
+        background-color: $white;
+        border-color: $white;
+        color: $black;
+    }
+
+    &.hollow {
+        background-color: transparent;
+        color: $color;
+        border-color: $color;
+
+        &.selected, &.checked, &:hover, &:focus {
+            background-color: $color;
+            color: $color-font;
+        }
+    }
+}
+
+
+.button,
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+
+    display: inline-block;
+    appearance: none;
+    border: 1px solid;
+    border-radius: $border-radius;
+    cursor: pointer;
+    font-family: $font-family;
+    font-size: $font-size;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition: all $duration $timing;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    @include button-spacing(0.5);
+
+    @include button-color($primary-color, $primary-color-font);
+
+    &.black0{ @include button-color($black0, $black0-font); }
+    &.white0{ @include button-color($white0, $white0-font); }
+    &.black{ @include button-color($black, $black-font); }
+    &.white{ @include button-color($white, $white-font); }
+    &.dark-gray{ @include button-color($dark-gray, $dark-gray-font); }
+    &.medium-gray{ @include button-color($medium-gray, $medium-gray-font); }
+    &.light-gray{ @include button-color($light-gray, $light-gray-font); }
+    &.red{ @include button-color($red, $red-font); }
+    &.pink{ @include button-color($pink, $pink-font); }
+    &.purple{ @include button-color($purple, $purple-font); }
+    &.magenta{ @include button-color($magenta, $magenta-font); }
+    &.indigo{ @include button-color($indigo, $indigo-font); }
+    &.blue{ @include button-color($blue, $blue-font); }
+    &.cyan{ @include button-color($cyan, $cyan-font); }
+    &.green{ @include button-color($green, $green-font); }
+    &.lime{ @include button-color($lime, $lime-font); }
+    &.yellow{ @include button-color($yellow, $yellow-font); }
+    &.orange{ @include button-color($orange, $orange-font); }
+    &.red-orange{ @include button-color($red-orange, $red-orange-font); }
+    &.primary{ @include button-color($primary-color, $primary-color-font); }
+    &.secondary{ @include button-color($secondary-color, $secondary-color-font); }
+    &.default{ @include button-color($default-color, $default-color-font); }
+    &.success{ @include button-color($success-color, $success-color-font); }
+    &.error{ @include button-color($error-color, $error-color-font); }
+    &.warning{ @include button-color($warning-color, $warning-color-font); }
+    &.info{ @include button-color($info-color, $info-color-font); }
+
+    &.tiny { @include button-spacing(0.1); }
+    &.small { @include button-spacing(0.25); }
+    &.large { @include button-spacing(1); }
+    &.huge { @include button-spacing(2); }
+
+    &.tiny-icon { @include icon-button-spacing(0.1); }
+    &.small-icon { @include icon-button-spacing(0.25); }
+    &.medium-icon { @include icon-button-spacing(0.5); }
+    &.large-icon { @include icon-button-spacing(1); }
+    &.huge-icon { @include icon-button-spacing(2); }
+
+}
