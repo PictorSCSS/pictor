@@ -1,9 +1,6 @@
-@mixin button-spacing($num)  {
-  padding: $small-spacing*$num $spacing*$num;
-}
-
-@mixin icon-button-spacing($num)  {
-  padding: $spacing*$num;
+@mixin button-spacing($x, $y, $font) {
+  padding: $spacing*$x $spacing*$y;
+  font-size: $font-size*$font;
 }
 
 @mixin button-color($color, $color-font) {
@@ -54,9 +51,18 @@ button,
     vertical-align: middle;
     white-space: nowrap;
 
-    @include button-spacing(0.5);
-
+    @include button-spacing($medium * 0.25, $medium, 1);
     @include button-color($primary-color, $primary-color-font);
+
+    &.tiny { @include button-spacing($tiny * 0.25, $tiny, 0.8); }
+    &.small { @include button-spacing($small * 0.25, $small, 1); }
+    &.large { @include button-spacing($large * 0.25, $large, 1.25); }
+    &.huge { @include button-spacing($huge * 0.25, $huge, 1.5); }
+
+    &.tiny-icon { @include button-spacing($tiny, $tiny, 0.8); }
+    &.small-icon { @include button-spacing($small, $small, 1); }
+    &.large-icon { @include button-spacing($large, $large, 1.25); }
+    &.huge-icon { @include button-spacing($huge, $huge, 1.5); }
 
     &.black0{ @include button-color($black0, $black0-font); }
     &.white0{ @include button-color($white0, $white0-font); }
@@ -84,16 +90,5 @@ button,
     &.error{ @include button-color($error-color, $error-color-font); }
     &.warning{ @include button-color($warning-color, $warning-color-font); }
     &.info{ @include button-color($info-color, $info-color-font); }
-
-    &.tiny { @include button-spacing(0.1); }
-    &.small { @include button-spacing(0.25); }
-    &.large { @include button-spacing(1); }
-    &.huge { @include button-spacing(2); }
-
-    &.tiny-icon { @include icon-button-spacing(0.1); }
-    &.small-icon { @include icon-button-spacing(0.25); }
-    &.medium-icon { @include icon-button-spacing(0.5); }
-    &.large-icon { @include icon-button-spacing(1); }
-    &.huge-icon { @include icon-button-spacing(2); }
 
 }

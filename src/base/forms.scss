@@ -10,10 +10,11 @@ $all-input-fields: "[type='color'], [type='date'], [type='datetime'], [type='dat
 
     &:hover {
         border-color: lighten($border-color, 15%);
+        box-shadow: 0 5px 10px -2px rgba($shadow-color, 0.5);
     }
 
     &:focus {
-        border-color: lighten($border-color, 30%);
+        border-color: lighten($border-color, 15%);
         box-shadow: 0 5px 10px -2px rgba($shadow-color, 1);
         outline: none;
     }
@@ -64,10 +65,10 @@ textarea {
     box-sizing: border-box;
     margin-bottom: $small-spacing;
     padding: $spacing / 3;
-    transition: border-color $duration $timing;
+    transition: all $duration $timing;
     width: 100%;
 
-    @include color-inputs($black-font, $dark-gray, $black, $black0);
+    @include color-inputs($black, $medium-gray, $white, $dark-gray);
 
 }
 
@@ -105,28 +106,28 @@ select {
     &.info {
         label { color: $info-color; }
         #{$all-input-fields} {
-            @include color-inputs($info-color-font, $info-color, mix($info-color, $background-color, 30%), darken($info-color, 20%));
+            @include color-inputs($info-color, $info-color, mix($info-color, $background-color, 10%), darken($info-color, 20%));
         }
     }
 
     &.warning {
         label { color: $warning-color; }
         #{$all-input-fields} {
-            @include color-inputs($warning-color-font, $warning-color, mix($warning-color, $background-color, 30%), darken($warning-color, 20%));
+            @include color-inputs($warning-color, $warning-color, mix($warning-color, $background-color, 10%), darken($warning-color, 20%));
         }
     }
 
     &.success {
         label { color: $success-color; }
         #{$all-input-fields} {
-            @include color-inputs($success-color-font, $success-color, mix($success-color, $background-color, 30%), darken($success-color, 20%));
+            @include color-inputs($success-color, $success-color, mix($success-color, $background-color, 10%), darken($success-color, 20%));
         }
     }
 
     &.error {
         label { color: $error-color; }
         #{$all-input-fields} {
-            @include color-inputs($error-color-font, $error-color, mix($error-color, $background-color, 30%), darken($error-color, 20%));
+            @include color-inputs($error-color, $error-color, mix($error-color, $background-color, 10%), darken($error-color, 20%));
         }
     }
 

@@ -2,7 +2,9 @@
 
 ### Minimalist SCSS boilerplate.
 
-Sometimes you just want to get started in an unopinionated manner. Inspired by Semantic UI, Bourbon IO and Zurb Foundation.
+Sometimes you just want to get started in an unopinionated manner.
+
+Inspired by Semantic UI, Bourbon IO and Zurb Foundation.
 
 # TODO
 

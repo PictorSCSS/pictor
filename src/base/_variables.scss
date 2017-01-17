@@ -17,15 +17,19 @@ $major-eleventh:   2.667;
 $major-twelfth:    3;
 $double-octave:    4;
 
+$modular-scale: $golden;
+$base-scale: 16;
+
 // Typography
-$font-family: 'Courier New';
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i,700');
+$font-family: 'Ubuntu Mono', monospace;
 $heading-font-family: $font-family;
 
 // Font Sizes
-$font-size: 16px;
+$font-size: $base-scale * 1px;
 
 // Line height
-$line-height: 1.5;
+$line-height: 1.25;
 $heading-line-height: 1.5;
 
 // Other Sizes
@@ -34,26 +38,29 @@ $spacing: $line-height * $font-size;
 $small-spacing: $spacing / 2;
 $z-index: 0;
 
-// Nav
-$nav-height: $font-size * 4;
-
 // Font Colors
 $font-color: $medium-gray;
 
 // Headings
-$heading-color: $light-gray;
+$heading-color: $dark-gray;
 
 // Border
-$border-color: $dark-gray;
+$border-color: $light-gray;
 $border: 1px solid $border-color;
 
 // Background Colors
-$background-color: lighten($black, 5%);
+$background-color: $white0;
 $secondary-background-color: $dark-gray;
 
 // Animations
 $duration: 150ms;
-$timing: ease;
+$timing: ease-in-out;
 
+// Sizes
+$tiny: 0.25 * $base-scale/10;
+$small: 0.5 * $base-scale/10;
+$medium: 0.75 * $base-scale/10;
+$large: 1 * $base-scale/10;
+$huge: 1.5 * $base-scale/10;
 
 
