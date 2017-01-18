@@ -68,7 +68,7 @@ textarea {
     transition: all $duration $timing;
     width: 100%;
 
-    @include color-inputs($black, $medium-gray, $white, $dark-gray);
+    @include color-inputs($font-color, $medium-gray, mix($white, $background-color, 10%), darken($dark-gray, 20%));
 
 }
 

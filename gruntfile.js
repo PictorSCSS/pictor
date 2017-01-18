@@ -67,6 +67,12 @@ module.exports = function (grunt) {
                 }
             },
 
+            misc: {
+                files: ['./docs/**/*.js', './docs/**/*.html'],
+                options: {
+                    livereload: true
+                }
+            }
         }
 
     });

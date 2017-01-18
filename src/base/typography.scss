@@ -23,6 +23,10 @@
     }
 }
 
+@mixin font-size($size) {
+    font-size: $font-size * $size;
+}
+
 
 body {
     color: $font-color;
@@ -66,6 +70,12 @@ p {
     margin: 0 0 $small-spacing;
 }
 
+.font-size-tiny { @include font-size($tiny*1.5); }
+.font-size-small { @include font-size($small); }
+.font-size-medium { @include font-size($medium); }
+.font-size-large { @include font-size($large); }
+.font-size-huge { @include font-size($huge); }
+
 a {
     transition: all $timing $duration;
     color: $primary-color;
@@ -90,7 +100,6 @@ a {
     &.dark-gray { @include link-color($dark-gray, lighten($dark-gray, 20%)); }
     &.medium-gray { @include link-color($medium-gray, darken($medium-gray, 20%)); }
     &.light-gray { @include link-color($light-gray, darken($light-gray, 20%)); }
-    &.red { @include link-color($red, lighten($red, 20%)); }
     &.pink { @include link-color($pink, lighten($pink, 20%)); }
     &.purple { @include link-color($purple, lighten($purple, 20%)); }
     &.magenta { @include link-color($magenta, lighten($magenta, 20%)); }
@@ -102,6 +111,7 @@ a {
     &.yellow { @include link-color($yellow, darken($yellow, 20%)); }
     &.orange { @include link-color($orange, darken($orange, 20%)); }
     &.red-orange { @include link-color($red-orange, lighten($red-orange, 20%)); }
+    &.red { @include link-color($red, lighten($red, 20%)); }
     &.primary { @include link-color($primary-color, lighten($primary-color, 20%)); }
     &.secondary { @include link-color($secondary-color, lighten($secondary-color, 20%)); }
     &.default { @include link-color($default-color, lighten($default-color, 20%)); }
@@ -117,7 +127,6 @@ a {
     &.dark-gray-bg { @include link-background-color($dark-gray, $dark-gray-font, lighten($dark-gray, 20%), $dark-gray-font); }
     &.medium-gray-bg { @include link-background-color($medium-gray, $medium-gray-font, darken($medium-gray, 20%), $medium-gray-font); }
     &.light-gray-bg { @include link-background-color($light-gray, $light-gray-font, darken($light-gray, 20%), $light-gray-font); }
-    &.red-bg { @include link-background-color($red, $red-font, lighten($red, 20%), $red-font); }
     &.pink-bg { @include link-background-color($pink, $pink-font, lighten($pink, 20%), $pink-font); }
     &.purple-bg { @include link-background-color($purple, $purple-font, lighten($purple, 20%), $purple-font); }
     &.magenta-bg { @include link-background-color($magenta, $magenta-font, lighten($magenta, 20%), $magenta-font); }
@@ -129,6 +138,7 @@ a {
     &.yellow-bg { @include link-background-color($yellow, $yellow-font, darken($yellow, 20%), $yellow-font); }
     &.orange-bg { @include link-background-color($orange, $orange-font, darken($orange, 20%), $orange-font); }
     &.red-orange-bg { @include link-background-color($red-orange, $red-orange-font, lighten($red-orange, 20%), $red-orange-font); }
+    &.red-bg { @include link-background-color($red, $red-font, lighten($red, 20%), $red-font); }
     &.primary-bg { @include link-background-color($primary-color, $primary-color-font, lighten($primary-color, 20%), $primary-color-font); }
     &.secondary-bg { @include link-background-color($secondary-color, $secondary-color-font, lighten($secondary-color, 20%), $secondary-color-font); }
     &.default-bg { @include link-background-color($default-color, $default-color-font, lighten($default-color, 20%), $default-color-font); }

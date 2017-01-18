@@ -1,0 +1,289 @@
+
+<a name='forms'></a>
+<h1 class='primary-bg white-text padding-small display-inline'>Forms</h1>
+
+<div id='forms' class='padding-large'>
+    <div class=''>
+
+        <form id='sample-form' class='padding-medium border-radius-x2 margin-bottom-huge border-medium-gray' style='border: 1px solid;'>
+
+            <a name='forms-example'></a>
+            <h2 class='text-center'>Sample Sign Up Form</h2>
+
+            <div class='field'>
+                <label for='user'>Username</label>
+                <input type='text' name='user' placeholder='Username'>
+            </div>
+
+            <div class='field'>
+                <label for='pass'>Password</label>
+                <input type='password' name='pass' placeholder='Password'>
+            </div>
+
+            <div class='field'>
+                <label for='pass2'>Confirm Password</label>
+                <input type='password' name='pass2' placeholder='Confirm Password'>
+            </div>
+
+            <div class='field'>
+                <label for='bio'>Biography</label>
+                <textarea name='bio' placeholder='Biography'></textarea>
+            </div>
+
+            <div class='field margin-bottom-huge'>
+                <label for='company'>Company</label>
+
+                <div class='select'>
+                    <select name='company' id='company'>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class='padding-tiny margin-bottom-huge'>
+                <h3>Paragraph explaining next section</h3>
+                <p>Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+
+
+
+            <div class='columns'>
+                <div class='column twelve padding-tiny'>
+                    <h6>Give up to 3</h6>
+                </div>
+                <div class='column four padding-tiny padding-left-none'>
+                    <input type='text' placeholder='Text Input'>
+                </div>
+                <div class='column four padding-tiny'>
+                    <input type='text' placeholder='Text Input'>
+                </div>
+                <div class='column four padding-tiny padding-right-none'>
+                    <input type='text' placeholder='Text Input'>
+                </div>
+            </div>
+
+            <div class='columns margin-bottom-huge'>
+                <div class='column six padding-right-small'>
+                    <div class='field'>
+                        <label for='company'>Arts</label>
+
+                        <select name='categories' multiple id='categories'>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                            <option>Option 4</option>
+                            <option>Option 5</option>
+                            <option>Option 6</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='column six padding-left-small'>
+                    <div class='field'>
+                        <label for='company'>Trades</label>
+
+                        <select name='categories' multiple id='categories'>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                            <option>Option 4</option>
+                            <option>Option 5</option>
+                            <option>Option 6</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class='columns field margin-bottom-huge'>
+                <div class='column six valign-middle text-right padding-right-large'>
+                    <label for='label1' class=''>
+                        Horizontal Label
+                        <small class='medium-gray-text'>Explanation for horizontal label. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</small>
+                    </label>
+
+                </div>
+                <div class='column six valign-middle text-left'>
+                    <input type='text' name='label1' placeholder='Horizontal Input'>
+                </div>
+            </div>
+
+            <div class='columns field margin-bottom-huge'>
+                <div class='column six valign-middle text-right padding-right-large'>
+                    <input class='text-right' type='text' name='label1' placeholder='Horizontal Input'>
+                </div>
+                <div class='column six valign-middle text-left'>
+                    <label for='label1' class=''>
+                        Horizontal Label
+                        <small class='medium-gray-text'>Explanation for horizontal label. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</small>
+                    </label>
+                </div>
+            </div>
+
+            <div class='text-right margin-bottom-huge'>
+                <div class='field'>
+                    <label for='remember'>
+                        I Agree to the terms of service
+                        <input type='checkbox' name='remember'>
+                    </label>
+                </div>
+
+                <div class='field'>
+                    <label for='remember'>
+                        I am over the age of 18
+                        <input type='checkbox' name='remember'>
+                    </label>
+                </div>
+            </div>
+
+            <div class='text-center'>
+                <button class='large success margin-right-large'>Submit</button>
+                <button class='large error'>Cancel</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class='twelve column margin-top-large margin-bottom-large secondary-bg padding-small'>
+        <p class='font-size-medium white-text'>Sample code:</p>
+
+        <pre><code class='html' id='sample-form-code'></code></pre>
+
+        <script>
+             var insert = escapeHTML(style_html(document.getElementById('sample-form').outerHTML));
+             document.getElementById('sample-form-code').innerHTML = insert;
+        </script>
+    </div>
+
+
+    <div class=''>
+
+        <a name='forms-states'></a>
+        <h2 class='text-center'>Form States</h2>
+
+        <div class='grid two'>
+            <div class='item margin-bottom-small padding-right-small field error'>
+                <label>Error Label</label>
+
+                <input type='text' placeholder='Error Text Input'>
+
+                <div class='select'>
+                    <select>
+                        <option>Error Select 1</option>
+                        <option>Error Select 2</option>
+                        <option>Error Select 3</option>
+                    </select>
+                </div>
+
+                <select multiple>
+                    <option>Error Select 1</option>
+                    <option>Error Select 2</option>
+                    <option>Error Select 3</option>
+                    <option>Error Select 4</option>
+                    <option>Error Select 5</option>
+                    <option>Error Select 6</option>
+                </select>
+
+                <textarea placeholder='Error Textarea' rows='5'></textarea>
+            </div>
+
+            <div class='item margin-bottom-small padding-left-small field info'>
+                <label>Info Label</label>
+
+                <input type='text' placeholder='Info Text Input'>
+
+                <div class='select'>
+                    <select>
+                        <option>Info Select 1</option>
+                        <option>Info Select 2</option>
+                        <option>Info Select 3</option>
+                    </select>
+                </div>
+
+                <select multiple>
+                    <option>Info Select 1</option>
+                    <option>Info Select 2</option>
+                    <option>Info Select 3</option>
+                    <option>Info Select 4</option>
+                    <option>Info Select 5</option>
+                    <option>Info Select 6</option>
+                </select>
+
+                <textarea placeholder='Info Textarea' rows='5'></textarea>
+            </div>
+
+            <div class='item margin-bottom-small padding-right-small field warning'>
+                <label>Warning Label</label>
+
+                <input type='text' placeholder='Warning Text Input'>
+
+                <div class='select'>
+                    <select>
+                        <option>Warning Select 1</option>
+                        <option>Warning Select 2</option>
+                        <option>Warning Select 3</option>
+                    </select>
+                </div>
+
+                <select multiple>
+                    <option>Warning Select 1</option>
+                    <option>Warning Select 2</option>
+                    <option>Warning Select 3</option>
+                    <option>Warning Select 4</option>
+                    <option>Warning Select 5</option>
+                    <option>Warning Select 6</option>
+                </select>
+
+                <textarea placeholder='Warning Textarea' rows='5'></textarea>
+            </div>
+
+            <div class='item margin-bottom-small padding-left-small field success'>
+                <label>Success Label</label>
+
+                <input type='text' placeholder='Success Text Input'>
+
+                <div class='select'>
+                    <select>
+                        <option>Success Select 1</option>
+                        <option>Success Select 2</option>
+                        <option>Success Select 3</option>
+                    </select>
+                </div>
+
+                <select multiple>
+                    <option>Success Select 1</option>
+                    <option>Success Select 2</option>
+                    <option>Success Select 3</option>
+                    <option>Success Select 4</option>
+                    <option>Success Select 5</option>
+                    <option>Success Select 6</option>
+                </select>
+
+                <textarea placeholder='Success Textarea' rows='5'></textarea>
+            </div>
+        </div>
+    </div>
+
+
+    <div class='twelve column margin-top-large margin-bottom-large secondary-bg padding-small'>
+        <p class='font-size-medium white-text'>Sample code:</p>
+
+        <pre><code class='html' id='form-state-code'></code></pre>
+
+        <div id='form-state' class='hide'>
+            <div class="field success">... form element ...</div>
+            <div class="field error">... form element ...</div>
+            <div class="field info">... form element ...</div>
+            <div class="field warning">... form element ...</div>
+        </div>
+
+        <script>
+             var insert = escapeHTML(style_html(document.getElementById('form-state').innerHTML));
+             document.getElementById('form-state-code').innerHTML = insert;
+        </script>
+    </div>
+
+</div>
