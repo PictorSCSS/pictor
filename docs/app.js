@@ -53,7 +53,6 @@ app.on('part', function(e, opts) {
     });
 });
 
-
 function linkNavigate(target) {
 
     var href = target.href.replace(window.location.origin+'/#', '');
