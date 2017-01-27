@@ -1,0 +1,11 @@
+// Sizing and positioning
+.expand   { width: 100%; height: 100%; }
+.expand-x { width:  100%; }
+.expand-y { height: 100%; }
+
+// Max width per screen size
+.max-width-mobile { max-width: $mobile-screen; }
+.max-width-tablet { max-width: $tablet-screen; }
+.max-width-laptop { max-width: $laptop-screen; }
+.max-width-desktop { max-width: $desktop-screen; }
+.max-width-hd { max-width: $hd-screen; }

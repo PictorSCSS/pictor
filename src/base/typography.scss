@@ -1,32 +1,6 @@
-@mixin link-color($color, $color-hover) {
-    color: $color;
-    &:hover, &:focus, &:active {
-        color: $color-hover;
-    }
-    &:disabled {
-        color: desaturate($color, 30%);
-    }
-}
-
-@mixin link-background-color($background-color, $font-color, $background-color-hover, $font-color-hover) {
-    color: $font-color;
-    background-color: $background-color;
-
-    &:hover, &:focus, &:active {
-        color: $font-color-hover;
-        background-color: $background-color-hover;
-    }
-    &:disabled {
-        color: desaturate($font-color, 30%);
-        background-color: desaturate($background-color, 30%);
-        cursor: not-allowed;
-    }
-}
-
-@mixin font-size($size) {
-    font-size: $font-size * $size;
-}
-
+/**
+ * Typography
+ */
 
 body {
     color: $font-color;
@@ -70,12 +44,6 @@ p {
     margin: 0 0 $small-spacing;
 }
 
-.font-size-tiny { @include font-size($tiny*1.5); }
-.font-size-small { @include font-size($small); }
-.font-size-medium { @include font-size($medium); }
-.font-size-large { @include font-size($large); }
-.font-size-huge { @include font-size($huge); }
-
 a {
     transition: all $timing $duration;
     color: $primary-color;
@@ -92,62 +60,6 @@ a {
     &:focus {
         outline: none;
     }
-
-    &.black0 { @include link-color($black0, lighten($black0, 20%)); }
-    &.white0 { @include link-color($white0, darken($white0, 20%)); }
-    &.black { @include link-color($black, lighten($black, 20%)); }
-    &.white { @include link-color($white, darken($white, 20%)); }
-    &.dark-gray { @include link-color($dark-gray, lighten($dark-gray, 20%)); }
-    &.medium-gray { @include link-color($medium-gray, darken($medium-gray, 20%)); }
-    &.light-gray { @include link-color($light-gray, darken($light-gray, 20%)); }
-    &.pink { @include link-color($pink, lighten($pink, 20%)); }
-    &.purple { @include link-color($purple, lighten($purple, 20%)); }
-    &.magenta { @include link-color($magenta, lighten($magenta, 20%)); }
-    &.indigo { @include link-color($indigo, lighten($indigo, 20%)); }
-    &.blue { @include link-color($blue, lighten($blue, 20%)); }
-    &.cyan { @include link-color($cyan, darken($cyan, 20%)); }
-    &.green { @include link-color($green, darken($green, 20%)); }
-    &.lime { @include link-color($lime, darken($lime, 20%)); }
-    &.yellow { @include link-color($yellow, darken($yellow, 20%)); }
-    &.orange { @include link-color($orange, darken($orange, 20%)); }
-    &.red-orange { @include link-color($red-orange, lighten($red-orange, 20%)); }
-    &.red { @include link-color($red, lighten($red, 20%)); }
-    &.primary { @include link-color($primary-color, lighten($primary-color, 20%)); }
-    &.secondary { @include link-color($secondary-color, lighten($secondary-color, 20%)); }
-    &.default { @include link-color($default-color, lighten($default-color, 20%)); }
-    &.success { @include link-color($success-color, lighten($success-color, 20%)); }
-    &.error { @include link-color($error-color, lighten($error-color, 20%)); }
-    &.warning { @include link-color($warning-color, lighten($warning-color, 20%)); }
-    &.info { @include link-color($info-color, lighten($info-color, 20%)); }
-
-    &.black0-bg { @include link-background-color($black0, $black0-font, lighten($black0, 20%), $black0-font); }
-    &.white0-bg { @include link-background-color($white0, $white0-font, darken($white0, 20%), $white0-font); }
-    &.black-bg { @include link-background-color($black, $black-font, lighten($black, 20%), $black-font); }
-    &.white-bg { @include link-background-color($white, $white-font, darken($white, 20%), $white-font); }
-    &.dark-gray-bg { @include link-background-color($dark-gray, $dark-gray-font, lighten($dark-gray, 20%), $dark-gray-font); }
-    &.medium-gray-bg { @include link-background-color($medium-gray, $medium-gray-font, darken($medium-gray, 20%), $medium-gray-font); }
-    &.light-gray-bg { @include link-background-color($light-gray, $light-gray-font, darken($light-gray, 20%), $light-gray-font); }
-    &.pink-bg { @include link-background-color($pink, $pink-font, lighten($pink, 20%), $pink-font); }
-    &.purple-bg { @include link-background-color($purple, $purple-font, lighten($purple, 20%), $purple-font); }
-    &.magenta-bg { @include link-background-color($magenta, $magenta-font, lighten($magenta, 20%), $magenta-font); }
-    &.indigo-bg { @include link-background-color($indigo, $indigo-font, lighten($indigo, 20%), $indigo-font); }
-    &.blue-bg { @include link-background-color($blue, $blue-font, lighten($blue, 20%), $blue-font); }
-    &.cyan-bg { @include link-background-color($cyan, $cyan-font, darken($cyan, 20%), $cyan-font); }
-    &.green-bg { @include link-background-color($green, $green-font, darken($green, 20%), $green-font); }
-    &.lime-bg { @include link-background-color($lime, $lime-font, darken($lime, 20%), $lime-font); }
-    &.yellow-bg { @include link-background-color($yellow, $yellow-font, darken($yellow, 20%), $yellow-font); }
-    &.orange-bg { @include link-background-color($orange, $orange-font, darken($orange, 20%), $orange-font); }
-    &.red-orange-bg { @include link-background-color($red-orange, $red-orange-font, lighten($red-orange, 20%), $red-orange-font); }
-    &.red-bg { @include link-background-color($red, $red-font, lighten($red, 20%), $red-font); }
-    &.primary-bg { @include link-background-color($primary-color, $primary-color-font, lighten($primary-color, 20%), $primary-color-font); }
-    &.secondary-bg { @include link-background-color($secondary-color, $secondary-color-font, lighten($secondary-color, 20%), $secondary-color-font); }
-    &.default-bg { @include link-background-color($default-color, $default-color-font, lighten($default-color, 20%), $default-color-font); }
-    &.success-bg { @include link-background-color($success-color, $success-color-font, lighten($success-color, 20%), $success-color-font); }
-    &.error-bg { @include link-background-color($error-color, $error-color-font, lighten($error-color, 20%), $error-color-font); }
-    &.warning-bg { @include link-background-color($warning-color, $warning-color-font, lighten($warning-color, 20%), $warning-color-font); }
-    &.info-bg { @include link-background-color($info-color, $info-color-font, lighten($info-color, 20%), $info-color-font); }
-
-
 }
 
 hr {

@@ -1,0 +1,24 @@
+
+
+/** Mixins */
+
+@mixin font-size($size) {
+    font-size: $font-size * $size;
+}
+
+/** Text Helpers */
+
+.font-size-tiny { @include font-size($tiny*1.5); }
+.font-size-small { @include font-size($small); }
+.font-size-medium { @include font-size($medium); }
+.font-size-large { @include font-size($large); }
+.font-size-huge { @include font-size($huge); }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }

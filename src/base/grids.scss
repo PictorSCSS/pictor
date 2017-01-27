@@ -1,7 +1,7 @@
 /**
-    Grids module
-    Provides a multitude of layout mixins and utility classes
-*/
+ * Grids module
+ * Uses a multitude of layout mixins and utility classes
+ */
 
 // Breakpoints raw numbers
 $mobile: 600;
@@ -71,22 +71,53 @@ $max-width: $laptop-screen;
 }
 
 // Prefixable reset for targetted hide classes
-@mixin display-hide-elements-reset($prefix) {
-    .#{$prefix}only, .#{$prefix}only-inline {
+@mixin display-elements-reset($prefix) {
+
+    .#{$prefix}only, .#{$prefix}only-inline, .#{$prefix}only-inline-block,
+    .#{$prefix}show, .#{$prefix}show-inline, .#{$prefix}show-inline-block
+    .#{$prefix}up-show, .#{$prefix}up-show-inline, .#{$prefix}up-show-inline-block, {
         display: none;
     }
+
+}
+
+@mixin display-only-elements($prefix) {
+
+    .#{$prefix}only {
+        display: block;
+    }
+
+    .#{$prefix}only-inline {
+        display: inline-block;
+    }
+
+    .#{$prefix}only-inline-block {
+        display: inline-block;
+    }
+
+}
+
+@mixin display-show-elements($prefix) {
+
+    .#{$prefix}show {
+        display: block;
+    }
+
+    .#{$prefix}show-inline {
+        display: inline-block;
+    }
+
+    .#{$prefix}show-inline-block {
+        display: inline-block;
+    }
+
 }
 
 // Prefixable targetted hide classes
 @mixin display-hide-elements($prefix) {
+
     .#{$prefix}hide {
         display: none;
-    }
-    .#{$prefix}show, .#{$prefix}only {
-        display: block;
-    }
-    .#{$prefix}show-inline, .#{$prefix}only-inline {
-        display: inline-block;
     }
 
 }
@@ -94,40 +125,40 @@ $max-width: $laptop-screen;
 // Column grid prefixable classes
 @mixin gridcolumns($prefix) {
 
-    & > .column.#{$prefix}twelve {
+    & > [class*='column'].#{$prefix}twelve {
         @include grid-columns-twelve(12);
     }
-    & > .column.#{$prefix}eleven {
+    & > [class*='column'].#{$prefix}eleven {
         @include grid-columns-twelve(11);
     }
-    & > .column.#{$prefix}ten {
+    & > [class*='column'].#{$prefix}ten {
         @include grid-columns-twelve(10);
     }
-    & > .column.#{$prefix}nine {
+    & > [class*='column'].#{$prefix}nine {
         @include grid-columns-twelve(9);
     }
-    & > .column.#{$prefix}eight {
+    & > [class*='column'].#{$prefix}eight {
         @include grid-columns-twelve(8);
     }
-    & > .column.#{$prefix}seven {
+    & > [class*='column'].#{$prefix}seven {
         @include grid-columns-twelve(7);
     }
-    & > .column.#{$prefix}six {
+    & > [class*='column'].#{$prefix}six {
         @include grid-columns-twelve(6);
     }
-    & > .column.#{$prefix}five {
+    & > [class*='column'].#{$prefix}five {
         @include grid-columns-twelve(5);
     }
-    & > .column.#{$prefix}four {
+    & > [class*='column'].#{$prefix}four {
         @include grid-columns-twelve(4);
     }
-    & > .column.#{$prefix}three {
+    & > [class*='column'].#{$prefix}three {
         @include grid-columns-twelve(3);
     }
-    & > .column.#{$prefix}two {
+    & > [class*='column'].#{$prefix}two {
         @include grid-columns-twelve(2);
     }
-    & > .column.#{$prefix}one {
+    & > [class*='column'].#{$prefix}one {
         @include grid-columns-twelve(1);
     }
 
@@ -197,14 +228,14 @@ $max-width: $laptop-screen;
 
 
 // Columns applicable to all screens
-.columns {
+.grid-columns {
     @extend %gridreset;
-    & > .column { @extend %griditem; }
+    & > [class*='column'] { @extend %griditem; }
     @include gridcolumns('');
 }
 
 // Grids applicable to all screens
-.grid {
+.grid-items {
     @extend %gridreset;
     & > .item { @extend %griditem; }
     @include griditems('');
@@ -226,49 +257,82 @@ html {
   box-sizing: inherit;
 }
 
-// Max width per screen size
-.max-width-mobile { max-width: $mobile-screen; }
-.max-width-tablet { max-width: $tablet-screen; }
-.max-width-laptop { max-width: $laptop-screen; }
-.max-width-desktop { max-width: $desktop-screen; }
-.max-width-hd { max-width: $hd-screen; }
-
 // Reset hide elements per screen
-@include display-hide-elements-reset('');
-@include display-hide-elements-reset('mobile-');
-@include display-hide-elements-reset('tablet-');
-@include display-hide-elements-reset('laptop-');
-@include display-hide-elements-reset('desktop-');
-@include display-hide-elements-reset('hd-');
+@include display-elements-reset('mobile-');
+@include display-elements-reset('tablet-');
+@include display-elements-reset('laptop-');
+@include display-elements-reset('desktop-');
+@include display-elements-reset('hd-');
 
 // Declare hide element globally
 @include display-hide-elements('');
+@include display-only-elements('');
+@include display-show-elements('');
 
 // Grid overrides per device
 // Includes columns, grid, and hide elements
 @include mobile-screen {
-    @include display-hide-elements("mobile-");
-    .columns { @include gridcolumns("mobile-"); }
-    .grid { @include griditems("mobile-"); }
+    $prefix: 'mobile-';
+    @include display-hide-elements($prefix);
+    @include display-only-elements($prefix);
+    @include display-show-elements($prefix);
+
+    @include display-show-elements('#{$prefix}up-');
+
+    .grid-columns { @include gridcolumns($prefix); }
+    .grid-items { @include griditems($prefix); }
 }
 @include tablet-screen {
-    @include display-hide-elements("tablet-");
-    .columns { @include gridcolumns("tablet-"); }
-    .grid { @include griditems("tablet-"); }
+    $prefix: 'tablet-';
+    @include display-hide-elements($prefix);
+    @include display-only-elements($prefix);
+    @include display-show-elements($prefix);
+
+    @include display-show-elements('mobile-up-');
+    @include display-show-elements('#{$prefix}up-');
+
+    .grid-columns { @include gridcolumns($prefix); }
+    .grid-items { @include griditems($prefix); }
 }
 @include laptop-screen {
-    @include display-hide-elements("laptop-");
-    .columns { @include gridcolumns("laptop-"); }
-    .grid { @include griditems("laptop-"); }
+    $prefix: 'laptop-';
+    @include display-hide-elements($prefix);
+    @include display-only-elements($prefix);
+    @include display-show-elements($prefix);
+
+    @include display-show-elements('mobile-up-');
+    @include display-show-elements('tablet-up-');
+    @include display-show-elements('#{$prefix}up-');
+
+    .grid-columns { @include gridcolumns($prefix); }
+    .grid-items { @include griditems($prefix); }
 }
 @include desktop-screen {
-    @include display-hide-elements("desktop-");
-    .columns { @include gridcolumns("desktop-"); }
-    .grid { @include griditems("desktop-"); }
+    $prefix: 'desktop-';
+    @include display-hide-elements($prefix);
+    @include display-only-elements($prefix);
+    @include display-show-elements($prefix);
+
+    @include display-show-elements('mobile-up-');
+    @include display-show-elements('tablet-up-');
+    @include display-show-elements('laptop-up-');
+    @include display-show-elements('#{$prefix}up-');
+
+    .grid-columns { @include gridcolumns($prefix); }
+    .grid-items { @include griditems($prefix); }
 }
 @include hd-screen {
-    @include display-hide-elements("hd-");
-    .columns { @include gridcolumns("hd-"); }
-    .grid { @include griditems("hd-"); }
+    $prefix: 'hd-';
+    @include display-hide-elements($prefix);
+    @include display-only-elements($prefix);
+    @include display-show-elements($prefix);
+
+    @include display-show-elements('mobile-up-');
+    @include display-show-elements('tablet-up-');
+    @include display-show-elements('laptop-up-');
+    @include display-show-elements('desktop-up-');
+
+    .grid-columns { @include gridcolumns($prefix); }
+    .grid-items { @include griditems($prefix); }
 }
 

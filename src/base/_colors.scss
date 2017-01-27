@@ -1,0 +1,31 @@
+// Base colors | Base font color when color used as bg
+$black0: #000000;       $black0-font: #ffffff;
+$black: #161616;        $black-font: #ffffff;
+$white: #f2f2f2;        $white-font: $black;
+$white0: #ffffff;       $white0-font: $black0;
+$dark-gray: #333333;    $dark-gray-font: $white;
+$medium-gray: #777777;  $medium-gray-font: $white;
+$light-gray: #dddddd;   $light-gray-font: $black;
+$pink: #F96793;         $pink-font: mix($pink, $white, 30%);
+$magenta: #E533A2;      $magenta-font: mix($magenta, $white, 30%);
+$purple: #B133E5;       $purple-font: mix($purple, $white, 30%);
+$indigo: #4A53CC;       $indigo-font: mix($indigo, $white, 30%);
+$blue: #005F94;         $blue-font: mix($blue, $white, 30%);
+$cyan: #4EDDDD;         $cyan-font: mix($cyan, $black, 30%);
+$green: #5EB546;        $green-font: mix($green, $white, 30%);
+$lime: #BCD631;         $lime-font: mix($lime, $black, 30%);
+$yellow: #FEEA3F;       $yellow-font: mix($yellow, $black, 30%);
+$orange: #FF9800;       $orange-font: mix($orange, $black, 30%);
+$red-orange: #F26722;   $red-orange-font: mix($red-orange, $white, 30%);
+$red: #DD1F1F;          $red-font: mix($red, $white, 30%);
+
+
+// Action colors
+$primary-color: #EF3B3A;        $primary-color-font: $white;
+$secondary-color: $dark-gray;   $secondary-color-font: $white;
+$default-color: $medium-gray;   $default-color-font: $white;
+
+$success-color: mix($green, $black, 85%);   $success-color-font: $white;
+$error-color: mix($red, $black, 85%);       $error-color-font: $white;
+$warning-color: mix($yellow, $black, 85%);  $warning-color-font: $white;
+$info-color: mix($blue, $black, 85%);       $info-color-font: $white;

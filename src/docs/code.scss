@@ -1,3 +1,13 @@
 pre code {
+
     max-height: $font-size*15;
+
+}
+
+.code {
+
+    background: $white;
+    padding: $font-size/4;
+    font-family: monospace;
+
 }

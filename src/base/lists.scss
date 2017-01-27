@@ -1,21 +1,47 @@
 ul,
 ol {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    &.circle, &.disc, &.square, &.armenian, &.cjk-ideographic, &.decimal, &.decimal-leading-zero, &.georgian, &.hebrew, &.hiragana, &.hiragana-iroha, &.katakana, &.katakana-iroha, &.lower-alpha, &.lower-greek, &.lower-latin, &.lower-roman, &.upper-alpha, &.upper-latin, &.upper-roman {
+      padding-left: $spacing;
+    }
+
+    &.circle {list-style-type: circle; }
+    &.disc {list-style-type: disc; }
+    &.square {list-style-type: square; }
+    &.armenian {list-style-type: armenian; }
+    &.cjk-ideographic {list-style-type: cjk-ideographic; }
+    &.decimal {list-style-type: decimal; }
+    &.decimal-leading-zero {list-style-type: decimal-leading-zero; }
+    &.georgian {list-style-type: georgian; }
+    &.hebrew {list-style-type: hebrew; }
+    &.hiragana {list-style-type: hiragana; }
+    &.hiragana-iroha {list-style-type: hiragana-iroha; }
+    &.katakana {list-style-type: katakana; }
+    &.katakana-iroha {list-style-type: katakana-iroha; }
+    &.lower-alpha {list-style-type: lower-alpha; }
+    &.lower-greek {list-style-type: lower-greek; }
+    &.lower-latin {list-style-type: lower-latin; }
+    &.lower-roman {list-style-type: lower-roman; }
+    &.upper-alpha {list-style-type: upper-alpha; }
+    &.upper-latin {list-style-type: upper-latin; }
+    &.upper-roman {list-style-type: upper-roman; }
+
 }
 
 dl {
-  margin: 0;
+    margin: 0;
 }
 
 dt {
-  font-weight: 600;
-  margin: 0;
+    font-weight: 600;
+    margin: 0;
 }
 
 dd {
-  margin: 0;
+    margin: 0;
 }
 
 

@@ -1,0 +1,28 @@
+.overflow   { overflow: auto; }
+.overflow-x { overflow-x: auto; }
+.overflow-y { overflow-y: auto; }
+
+.overflow-hidden   { overflow: hidden; }
+.overflow-x-hidden { overflow-x: hidden; }
+.overflow-y-hidden { overflow-y: hidden; }
+
+.clearfix { &, &:before, &:after { clear: both; } }
+
+.valign-top { vertical-align: top;}
+.valign-middle { vertical-align: middle;}
+.valign-bottom { vertical-align: bottom;}
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+
+.display-none { display: none; }
+.display-block { display: block; }
+.display-inline-block { display: inline-block; }
+.display-inline { display: inline; }
+
+.float-left { float: left; }
+.float-right { float: right; }
+
+.element-center { margin-left: auto; margin-right: auto; }
+
