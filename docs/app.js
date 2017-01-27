@@ -25,7 +25,7 @@ app.on('highlight', function () {
 
 app.on('page', function(e, name) {
 
-    $.get(['/pages/', name, '.html'].join(''), function (data) {
+    $.get(['./pages/', name, '.html'].join(''), function (data) {
 
         page.html(data);
         app.trigger('highlight');
@@ -41,7 +41,7 @@ app.on('part', function(e, opts) {
 
     var name = opts.name, appendTo = opts.appendTo;
 
-    $.get(['/parts/', name, '.html'].join(''), function (data) {
+    $.get(['./parts/', name, '.html'].join(''), function (data) {
 
         appendTo.html(data);
         app.trigger('part-loaded', name);

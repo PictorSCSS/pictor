@@ -5193,14 +5193,4 @@ pre code {
   font-family: monospace;
 }
 
-pre code {
-  max-height: 240px;
-}
-
-.code {
-  background: #f2f2f2;
-  padding: 4px;
-  font-family: monospace;
-}
-
 /*# sourceMappingURL=app.css.map */
