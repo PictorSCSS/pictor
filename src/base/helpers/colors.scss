@@ -1,186 +1,47 @@
-/**
- * Mixins
- */
-@mixin link-color($color, $color-hover) {
-    color: $color;
-    &:hover, &:focus, &:active {
-        color: $color-hover;
+@each $i in $colors {
+    $name: nth($i, 1);
+    $color: nth($i, 2);
+    $font: nth($i, 3);
+    $hover: nth($i, 4);
+    $font-hover: nth($i, 5);
+
+    .#{$name}-bg {
+        background-color: $color;
+        color: $font;
+
+        &:hover {
+            background-color: $hover;
+            color: $font-hover;
+        }
     }
-    &:disabled {
-        color: desaturate($color, 30%);
+
+    .#{$name}-text {
+        color: $color;
     }
+
+    .#{$name}-border {
+        border-color: $color;
+    }
+
+    a.#{$name} {
+        @include link-color($color, $hover);
+    }
+
+    a.#{$name}-bg {
+        @include link-background-color($color, $font, $hover, $font-hover);
+    }
+
+    .button,
+    button,
+    [type='button'],
+    [type='reset'],
+    [type='submit'] {
+
+        &.#{$name} {
+            @include button-color($color, $font, $hover, $font-hover);
+        }
+    }
+
 }
-
-@mixin link-background-color($background-color, $font-color, $background-color-hover, $font-color-hover) {
-    color: $font-color;
-    background-color: $background-color;
-
-    &:hover, &:focus, &:active {
-        color: $font-color-hover;
-        background-color: $background-color-hover;
-    }
-    &:disabled {
-        color: desaturate($font-color, 30%);
-        background-color: desaturate($background-color, 30%);
-        cursor: not-allowed;
-    }
-}
-
-
-
-/**
- * Backgrounds
- */
-
-.black-bg { background-color: $black; color: $black-font; }
-.white-bg { background-color: $white; color: $white-font; }
-.black0-bg { background-color: $black0; color: $black0-font; }
-.white0-bg { background-color: $white0; color: $white0-font; }
-.dark-gray-bg { background-color: $dark-gray; color: $dark-gray-font; }
-.medium-gray-bg { background-color: $medium-gray; color: $medium-gray-font; }
-.light-gray-bg { background-color: $light-gray; color: $light-gray-font; }
-.red-bg { background-color: $red; color: $red-font; }
-.pink-bg { background-color: $pink; color: $pink-font; }
-.purple-bg { background-color: $purple; color: $purple-font; }
-.magenta-bg { background-color: $magenta; color: $magenta-font; }
-.indigo-bg { background-color: $indigo; color: $indigo-font; }
-.blue-bg { background-color: $blue; color: $blue-font; }
-.cyan-bg { background-color: $cyan; color: $cyan-font; }
-.green-bg { background-color: $green; color: $green-font; }
-.lime-bg { background-color: $lime; color: $lime-font; }
-.yellow-bg { background-color: $yellow; color: $yellow-font; }
-.orange-bg { background-color: $orange; color: $orange-font; }
-.red-orange-bg { background-color: $red-orange; color: $red-orange-font; }
-.primary-bg { background-color: $primary-color; color: $primary-color-font; }
-.secondary-bg { background-color: $secondary-color; color: $secondary-color-font; }
-.default-bg { background-color: $default-color; color: $default-color-font; }
-.success-bg { background-color: $success-color; color: $success-color-font; }
-.error-bg { background-color: $error-color; color: $error-color-font; }
-.warning-bg { background-color: $warning-color; color: $warning-color-font; }
-.info-bg { background-color: $info-color; color: $info-color-font; }
-
-/**
- * Borders
- */
-
-.black-border { border-color: $black; }
-.white-border { border-color: $white; }
-.black0-border { border-color: $black0; }
-.white0-border { border-color: $white0; }
-.dark-gray-border { border-color: $dark-gray; }
-.medium-gray-border { border-color: $medium-gray; }
-.light-gray-border { border-color: $light-gray; }
-.red-border { border-color: $red; }
-.pink-border { border-color: $pink; }
-.purple-border { border-color: $purple; }
-.magenta-border { border-color: $magenta; }
-.indigo-border { border-color: $indigo; }
-.blue-border { border-color: $blue; }
-.cyan-border { border-color: $cyan; }
-.green-border { border-color: $green; }
-.lime-border { border-color: $lime; }
-.yellow-border { border-color: $yellow; }
-.orange-border { border-color: $orange; }
-.red-orange-border { border-color: $red-orange; }
-.primary-border { border-color: $primary-color; }
-.secondary-border { border-color: $secondary-color; }
-.default-border { border-color: $default-color; }
-.success-border { border-color: $success-color; }
-.error-border { border-color: $error-color; }
-.warning-border { border-color: $warning-color; }
-.info-border { border-color: $info-color; }
-
-/**
- * Text
- */
-
-.black-text { color: $black; }
-.white-text { color: $white; }
-.black0-text { color: $black0; }
-.white0-text { color: $white0; }
-.dark-gray-text { color: $dark-gray; }
-.medium-gray-text { color: $medium-gray; }
-.light-gray-text { color: $light-gray; }
-.red-text { color: $red; }
-.pink-text { color: $pink; }
-.purple-text { color: $purple; }
-.magenta-text { color: $magenta; }
-.indigo-text { color: $indigo; }
-.blue-text { color: $blue; }
-.cyan-text { color: $cyan; }
-.green-text { color: $green; }
-.lime-text { color: $lime; }
-.yellow-text { color: $yellow; }
-.orange-text { color: $orange; }
-.red-orange-text { color: $red-orange; }
-.primary-text { color: $primary-color; }
-.secondary-text { color: $secondary-color; }
-.default-text { color: $default-color; }
-.success-text { color: $success-color; }
-.error-text { color: $error-color; }
-.warning-text { color: $warning-color; }
-.info-text { color: $info-color; }
-
-/**
- * Links
- */
-
-a.black0 { @include link-color($black0, lighten($black0, 20%)); }
-a.white0 { @include link-color($white0, darken($white0, 20%)); }
-a.black { @include link-color($black, lighten($black, 20%)); }
-a.white { @include link-color($white, darken($white, 20%)); }
-a.dark-gray { @include link-color($dark-gray, lighten($dark-gray, 20%)); }
-a.medium-gray { @include link-color($medium-gray, darken($medium-gray, 20%)); }
-a.light-gray { @include link-color($light-gray, darken($light-gray, 20%)); }
-a.pink { @include link-color($pink, lighten($pink, 20%)); }
-a.purple { @include link-color($purple, lighten($purple, 20%)); }
-a.magenta { @include link-color($magenta, lighten($magenta, 20%)); }
-a.indigo { @include link-color($indigo, lighten($indigo, 20%)); }
-a.blue { @include link-color($blue, lighten($blue, 20%)); }
-a.cyan { @include link-color($cyan, darken($cyan, 20%)); }
-a.green { @include link-color($green, darken($green, 20%)); }
-a.lime { @include link-color($lime, darken($lime, 20%)); }
-a.yellow { @include link-color($yellow, darken($yellow, 20%)); }
-a.orange { @include link-color($orange, darken($orange, 20%)); }
-a.red-orange { @include link-color($red-orange, lighten($red-orange, 20%)); }
-a.red { @include link-color($red, lighten($red, 20%)); }
-a.primary { @include link-color($primary-color, lighten($primary-color, 20%)); }
-a.secondary { @include link-color($secondary-color, lighten($secondary-color, 20%)); }
-a.default { @include link-color($default-color, lighten($default-color, 20%)); }
-a.success { @include link-color($success-color, lighten($success-color, 20%)); }
-a.error { @include link-color($error-color, lighten($error-color, 20%)); }
-a.warning { @include link-color($warning-color, lighten($warning-color, 20%)); }
-
-/**
- * Link Backgrounds
- */
-
-a.info { @include link-color($info-color, lighten($info-color, 20%)); }
-a.black0-bg { @include link-background-color($black0, $black0-font, lighten($black0, 20%), $black0-font); }
-a.white0-bg { @include link-background-color($white0, $white0-font, darken($white0, 20%), $white0-font); }
-a.black-bg { @include link-background-color($black, $black-font, lighten($black, 20%), $black-font); }
-a.white-bg { @include link-background-color($white, $white-font, darken($white, 20%), $white-font); }
-a.dark-gray-bg { @include link-background-color($dark-gray, $dark-gray-font, lighten($dark-gray, 20%), $dark-gray-font); }
-a.medium-gray-bg { @include link-background-color($medium-gray, $medium-gray-font, darken($medium-gray, 20%), $medium-gray-font); }
-a.light-gray-bg { @include link-background-color($light-gray, $light-gray-font, darken($light-gray, 20%), $light-gray-font); }
-a.pink-bg { @include link-background-color($pink, $pink-font, lighten($pink, 20%), $pink-font); }
-a.purple-bg { @include link-background-color($purple, $purple-font, lighten($purple, 20%), $purple-font); }
-a.magenta-bg { @include link-background-color($magenta, $magenta-font, lighten($magenta, 20%), $magenta-font); }
-a.indigo-bg { @include link-background-color($indigo, $indigo-font, lighten($indigo, 20%), $indigo-font); }
-a.blue-bg { @include link-background-color($blue, $blue-font, lighten($blue, 20%), $blue-font); }
-a.cyan-bg { @include link-background-color($cyan, $cyan-font, darken($cyan, 20%), $cyan-font); }
-a.green-bg { @include link-background-color($green, $green-font, darken($green, 20%), $green-font); }
-a.lime-bg { @include link-background-color($lime, $lime-font, darken($lime, 20%), $lime-font); }
-a.yellow-bg { @include link-background-color($yellow, $yellow-font, darken($yellow, 20%), $yellow-font); }
-a.orange-bg { @include link-background-color($orange, $orange-font, darken($orange, 20%), $orange-font); }
-a.red-orange-bg { @include link-background-color($red-orange, $red-orange-font, lighten($red-orange, 20%), $red-orange-font); }
-a.red-bg { @include link-background-color($red, $red-font, lighten($red, 20%), $red-font); }
-a.primary-bg { @include link-background-color($primary-color, $primary-color-font, lighten($primary-color, 20%), $primary-color-font); }
-a.secondary-bg { @include link-background-color($secondary-color, $secondary-color-font, lighten($secondary-color, 20%), $secondary-color-font); }
-a.default-bg { @include link-background-color($default-color, $default-color-font, lighten($default-color, 20%), $default-color-font); }
-a.success-bg { @include link-background-color($success-color, $success-color-font, lighten($success-color, 20%), $success-color-font); }
-a.error-bg { @include link-background-color($error-color, $error-color-font, lighten($error-color, 20%), $error-color-font); }
-a.warning-bg { @include link-background-color($warning-color, $warning-color-font, lighten($warning-color, 20%), $warning-color-font); }
-a.info-bg { @include link-background-color($info-color, $info-color-font, lighten($info-color, 20%), $info-color-font); }
 
 

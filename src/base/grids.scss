@@ -3,229 +3,19 @@
  * Uses a multitude of layout mixins and utility classes
  */
 
-// Breakpoints raw numbers
-$mobile: 600;
-$tablet: 900;
-$laptop: 1200;
-$desktop: 1400;
-$hd: 1700;
+@import 'grids/variables';
+@import 'grids/mixins';
 
-// Breakpoints pixelated
-$mobile-screen: unquote("#{$mobile}px");
-$tablet-screen: unquote("#{$tablet}px");
-$laptop-screen: unquote("#{$laptop}px");
-$desktop-screen: unquote("#{$desktop}px");
-$hd-screen: unquote("#{$hd}px");
-
-// Universal max-width
-$max-width: $laptop-screen;
-
-
-@mixin mobile-screen {
-    @media only screen and (max-width: $mobile-screen) { @content; }
+// To keep our grids contained
+html {
+  box-sizing: border-box;
 }
 
-@mixin tablet-screen {
-    @media only screen and (min-width: $mobile-screen) and (max-width: $tablet-screen) { @content; }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
-
-@mixin laptop-screen {
-    @media only screen and (min-width: $tablet-screen) and (max-width: $laptop-screen) { @content; }
-}
-
-@mixin desktop-screen {
-    @media only screen and (min-width: $laptop-screen) and (max-width: $hd-screen) { @content; }
-}
-
-@mixin hd-screen {
-    @media only screen and (min-width: $hd-screen) { @content; }
-}
-
-@mixin grid-columns-twelve($columns) {
-    width: (100% / 12) * $columns;
-}
-
-// Clear floated elements
-@mixin clearfix() {
-    &:before, &:after { clear: both; }
-}
-
-// Main grid container
-// Font-size set to 0 to remove html quirk
-// where spacing causes line breaks and doesn't
-// allow pixel-perfect alignment.
-// This also gives grid items text-like properties,
-// such as vertical-align, text-align, and line-height,
-// which can be used for layout and styling
-%gridreset {
-    @include clearfix;
-    position: relative;
-    font-size: 0;
-}
-
-// Main grid item
-// Resets font-size to universal variable
-%griditem {
-    font-size: $font-size;
-    display: inline-block;
-}
-
-// Prefixable reset for targetted hide classes
-@mixin display-elements-reset($prefix) {
-
-    .#{$prefix}only, .#{$prefix}only-inline, .#{$prefix}only-inline-block,
-    .#{$prefix}show, .#{$prefix}show-inline, .#{$prefix}show-inline-block
-    .#{$prefix}up-show, .#{$prefix}up-show-inline, .#{$prefix}up-show-inline-block, {
-        display: none;
-    }
-
-}
-
-@mixin display-only-elements($prefix) {
-
-    .#{$prefix}only {
-        display: block;
-    }
-
-    .#{$prefix}only-inline {
-        display: inline-block;
-    }
-
-    .#{$prefix}only-inline-block {
-        display: inline-block;
-    }
-
-}
-
-@mixin display-show-elements($prefix) {
-
-    .#{$prefix}show {
-        display: block;
-    }
-
-    .#{$prefix}show-inline {
-        display: inline-block;
-    }
-
-    .#{$prefix}show-inline-block {
-        display: inline-block;
-    }
-
-}
-
-// Prefixable targetted hide classes
-@mixin display-hide-elements($prefix) {
-
-    .#{$prefix}hide {
-        display: none;
-    }
-
-}
-
-// Column grid prefixable classes
-@mixin gridcolumns($prefix) {
-
-    & > [class*='column'].#{$prefix}twelve {
-        @include grid-columns-twelve(12);
-    }
-    & > [class*='column'].#{$prefix}eleven {
-        @include grid-columns-twelve(11);
-    }
-    & > [class*='column'].#{$prefix}ten {
-        @include grid-columns-twelve(10);
-    }
-    & > [class*='column'].#{$prefix}nine {
-        @include grid-columns-twelve(9);
-    }
-    & > [class*='column'].#{$prefix}eight {
-        @include grid-columns-twelve(8);
-    }
-    & > [class*='column'].#{$prefix}seven {
-        @include grid-columns-twelve(7);
-    }
-    & > [class*='column'].#{$prefix}six {
-        @include grid-columns-twelve(6);
-    }
-    & > [class*='column'].#{$prefix}five {
-        @include grid-columns-twelve(5);
-    }
-    & > [class*='column'].#{$prefix}four {
-        @include grid-columns-twelve(4);
-    }
-    & > [class*='column'].#{$prefix}three {
-        @include grid-columns-twelve(3);
-    }
-    & > [class*='column'].#{$prefix}two {
-        @include grid-columns-twelve(2);
-    }
-    & > [class*='column'].#{$prefix}one {
-        @include grid-columns-twelve(1);
-    }
-
-}
-
-// Item grid prefixable classes
-@mixin griditems($prefix) {
-
-    &.#{$prefix}twelve .item {
-        @include grid-columns-twelve(1);
-        &.double { @include grid-columns-twelve(2); }
-        &.triple { @include grid-columns-twelve(3); }
-    }
-    &.#{$prefix}eleven .item {
-        @include grid-columns-twelve((12/11));
-        &.double { @include grid-columns-twelve((12/11)*2); }
-        &.triple { @include grid-columns-twelve((12/11)*3); }
-    }
-    &.#{$prefix}ten .item {
-        @include grid-columns-twelve((6/5));
-        &.double { @include grid-columns-twelve((6/5)*2); }
-        &.triple { @include grid-columns-twelve((6/5)*3); }
-    }
-    &.#{$prefix}nine .item {
-        @include grid-columns-twelve((12/9));
-        &.double { @include grid-columns-twelve((12/9)*2); }
-        &.triple { @include grid-columns-twelve((12/9)*3); }
-    }
-    &.#{$prefix}eight .item {
-        @include grid-columns-twelve((12/8));
-        &.double { @include grid-columns-twelve((12/8)*2); }
-        &.triple { @include grid-columns-twelve((12/8)*3); }
-    }
-    &.#{$prefix}seven .item {
-        @include grid-columns-twelve((12/7));
-        &.double { @include grid-columns-twelve((12/7)*2); }
-        &.triple { @include grid-columns-twelve((12/7)*3); }
-    }
-    &.#{$prefix}six .item {
-        @include grid-columns-twelve(2);
-        &.double { @include grid-columns-twelve(4); }
-        &.triple { @include grid-columns-twelve(6); }
-    }
-    &.#{$prefix}five .item {
-        @include grid-columns-twelve((12/5));
-        &.double { @include grid-columns-twelve((12/5)*2); }
-        &.triple { @include grid-columns-twelve((12/5)*3); }
-    }
-    &.#{$prefix}four .item {
-        @include grid-columns-twelve(3);
-        &.double { @include grid-columns-twelve(6); }
-        &.triple { @include grid-columns-twelve(9); }
-    }
-    &.#{$prefix}three .item {
-        @include grid-columns-twelve(4);
-        &.double { @include grid-columns-twelve(8); }
-        &.triple { @include grid-columns-twelve(12); }
-    }
-    &.#{$prefix}two .item {
-        @include grid-columns-twelve(6);
-        &.double { @include grid-columns-twelve(12); }
-    }
-    &.#{$prefix}one .item {
-        @include grid-columns-twelve(12);
-    }
-}
-
 
 // Columns applicable to all screens
 .grid-columns {
@@ -244,17 +34,6 @@ $max-width: $laptop-screen;
         & > .item { @extend %griditem; }
         @include griditems('');
     }
-}
-
-// To keep our grids contained
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
 }
 
 // Reset hide elements per screen

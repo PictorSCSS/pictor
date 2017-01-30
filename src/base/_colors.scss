@@ -11,7 +11,7 @@ $magenta: #E533A2;      $magenta-font: mix($magenta, $white, 30%);
 $purple: #B133E5;       $purple-font: mix($purple, $white, 30%);
 $indigo: #4A53CC;       $indigo-font: mix($indigo, $white, 30%);
 $blue: #005F94;         $blue-font: mix($blue, $white, 30%);
-$cyan: #4EDDDD;         $cyan-font: mix($cyan, $black, 30%);
+$cyan: #4EDDDD;         $cyan-font: mix($cyan, #000, 30%);
 $green: #5EB546;        $green-font: mix($green, $white, 30%);
 $lime: #BCD631;         $lime-font: mix($lime, $black, 30%);
 $yellow: #FEEA3F;       $yellow-font: mix($yellow, $black, 30%);
@@ -21,11 +21,235 @@ $red: #DD1F1F;          $red-font: mix($red, $white, 30%);
 
 
 // Action colors
-$primary-color: #EF3B3A;        $primary-color-font: $white;
-$secondary-color: $dark-gray;   $secondary-color-font: $white;
-$default-color: $medium-gray;   $default-color-font: $white;
-
+$primary-color: #EF3B3A;                    $primary-color-font: $white;
+$secondary-color: #333333;                  $secondary-color-font: $white;
+$default-color: #555555;                    $default-color-font: $white;
 $success-color: mix($green, $black, 85%);   $success-color-font: $white;
 $error-color: mix($red, $black, 85%);       $error-color-font: $white;
 $warning-color: mix($yellow, $black, 85%);  $warning-color-font: $white;
 $info-color: mix($blue, $black, 85%);       $info-color-font: $white;
+
+
+// Colors
+// (
+//      name,
+//      color,
+//      fontcolor,
+//      hovercolor,
+//      fonthovercolor
+// );
+$colors:
+
+
+
+    (
+        'success',
+        mix(#5EB546, #000, 85%),
+        #ffffff,
+        darken(mix(#5EB546, #000, 85%), 10%),
+        #fff
+    ),
+
+    (
+        'error',
+        mix(#DD1F1F, #000, 85%),
+        #ffffff,
+        darken(mix(#DD1F1F, #000, 85%), 10%),
+        #fff
+    ),
+
+    (
+        'warning',
+        mix(#FEEA3F, #000, 85%),
+        #ffffff,
+        darken(mix(#FEEA3F, #000, 85%), 10%),
+        #fff
+    ),
+
+    (
+        'info',
+        mix(#005F94, #000, 85%),
+        #ffffff,
+        darken(mix(#005F94, #000, 85%), 10%),
+        #fff
+    ),
+
+
+
+
+
+    (
+        'primary',
+        #EF3B3A,
+        #ffffff,
+        lighten(#EF3B3A, 10%),
+        #ffffff
+    ),
+    (
+        'secondary',
+        #444444,
+        #ffffff,
+        lighten(#444444, 10%),
+        #ffffff
+    ),
+    (
+        'default',
+        #999999,
+        #ffffff,
+        lighten(#999999, 10%),
+        #ffffff
+    ),
+
+
+
+
+    (
+        'black0',
+        #000000,
+        #ffffff,
+        darken(#000000, 10%),
+        darken(#ffffff, 10%)
+    ),
+    (
+        'black',
+        #161616,
+        #ffffff,
+        darken(#161616, 10%),
+        darken(#ffffff, 10%)
+    ),
+    (
+        'white',
+        #f2f2f2,
+        #000,
+        darken(#f2f2f2, 10%),
+        darken(#000, 10%),
+    ),
+    (
+        'white0',
+        #ffffff,
+        #000,
+        darken(#ffffff, 10%),
+        darken(#000, 10%)
+    ),
+    (
+        'dark-gray',
+        #333333,
+        #fff,
+        darken(#333333, 10%),
+        darken(#fff, 10%),
+    ),
+    (
+        'medium-gray',
+        #777777,
+        #fff,
+        darken(#777777, 10%),
+        darken(#fff, 10%),
+    ),
+    (
+        'light-gray',
+        #dddddd,
+        #000,
+        darken(#dddddd, 10%),
+        darken(#000, 10%),
+    ),
+    (
+        'pink',
+        #F96793,
+        mix(#F96793, #fff, 30%),
+        darken(#F96793, 10%),
+        darken(mix(#F96793, #fff, 30%), 10%)
+    ),
+    (
+        'magenta',
+        #E533A2,
+        mix(#E533A2, #fff, 30%),
+        darken(#E533A2, 10%),
+        darken(mix(#E533A2, #fff, 30%), 10%)
+    ),
+    (
+        'purple',
+        #B133E5,
+        mix(#B133E5, #fff, 30%),
+        darken(#B133E5, 10%),
+        darken(mix(#B133E5, #fff, 30%), 10%)
+    ),
+    (
+        'indigo',
+        #4A53CC,
+        mix(#4A53CC, #fff, 30%),
+        darken(#4A53CC, 10%),
+        darken(mix(#4A53CC, #fff, 30%), 10%)
+    ),
+    (
+        'blue',
+        #005F94,
+        mix(#005F94, #fff, 30%),
+        darken(#005F94, 10%),
+        darken(mix(#005F94, #fff, 30%), 10%)
+    ),
+    (
+        'cyan',
+        #4EDDDD,
+        mix(#4EDDDD, #000, 30%),
+        darken(#4EDDDD, 10%),
+        darken(mix(#4EDDDD, #000, 30%), 10%)
+    ),
+    (
+        'green',
+        #5EB546,
+        mix(#5EB546, #fff, 30%),
+        darken(#5EB546, 10%),
+        darken(mix(#5EB546, #fff, 30%), 10%)
+    ),
+    (
+        'lime',
+        #BCD631,
+        mix(#BCD631, #000, 30%),
+        darken(#BCD631, 10%),
+        darken(mix(#BCD631, #000, 30%), 10%)
+    ),
+    (
+        'yellow',
+        #FEEA3F,
+        mix(#FEEA3F, #000, 30%),
+        darken(#FEEA3F, 10%),
+        darken(mix(#FEEA3F, #000, 30%), 10%)
+    ),
+    (
+        'orange',
+        #FF9800,
+        mix(#FF9800, #000, 30%),
+        darken(#FF9800, 10%),
+        darken(mix(#FF9800, #000, 30%), 10%)
+    ),
+    (
+        'red-orange',
+        #F26722,
+        mix(#F26722, #fff, 30%),
+        darken(#F26722, 10%),
+        darken(mix(#F26722, #fff, 30%), 10%)
+    ),
+    (
+        'red',
+        #DD1F1F,
+        mix(#DD1F1F, #fff, 30%),
+        darken(#DD1F1F, 10%),
+        darken(mix(#DD1F1F, #fff, 30%), 10%)
+    ),
+
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+
+// Breakpoints raw numbers
+$mobile: 600;
+$tablet: 900;
+$laptop: 1200;
+$desktop: 1400;
+$hd: 1700;
+
+// Breakpoints pixelated
+$mobile-screen: unquote("#{$mobile}px");
+$tablet-screen: unquote("#{$tablet}px");
+$laptop-screen: unquote("#{$laptop}px");
+$desktop-screen: unquote("#{$desktop}px");
+$hd-screen: unquote("#{$hd}px");
+
+// Universal max-width
+$max-width: $laptop-screen;
