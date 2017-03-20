@@ -1,13 +1,17 @@
-@import "base/reset";
-@import "base/colors";
-@import "base/variables";
-@import "base/mixins";
-@import "base/grids";
+@import "pictor/reset";
+@import "pictor/base";
+@import "pictor/grids";
 
-@import "base/buttons";
-@import "base/forms";
-@import "base/lists";
-@import "base/tables";
-@import "base/typography";
+@import "pictor/buttons";
+@import "pictor/forms";
+@import "pictor/lists";
+@import "pictor/tables";
+@import "pictor/typography";
 
-@import "base/helpers";
+@import 'pictor/borders';
+@import 'pictor/cursors';
+@import 'pictor/position';
+@import 'pictor/sizing';
+@import 'pictor/spacing';
+@import 'pictor/text';
+@import 'pictor/colors';

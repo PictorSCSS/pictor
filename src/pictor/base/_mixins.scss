@@ -1,21 +1,82 @@
+/**
+ * Mixins
+ */
+@mixin link-color($color, $color-hover) {
+    color: $color;
+    &:hover, &:focus, &:active {
+        color: $color-hover;
+    }
+    &:disabled {
+        color: desaturate($color, 30%);
+    }
+}
+
+@mixin link-background-color($background, $font, $background-hover, $font-hover) {
+    color: $font;
+    background-color: $background;
+
+    &:hover, &:focus, &:active {
+        color: $font-hover;
+        background-color: $background-hover;
+    }
+    &:disabled {
+        color: desaturate($font, 30%);
+        background-color: desaturate($background, 30%);
+        cursor: not-allowed;
+    }
+}
+
+
+@mixin button-color($color, $font, $border, $hover, $font-hover, $border) {
+
+    background-color: $color;
+    border-color: $color;
+    border-width: $font-size/4;
+    color: $font;
+
+    &.selected, &.checked, &:hover, &:focus {
+        background-color: $hover;
+        border-color: $hover;
+        color: $font-hover;
+    }
+
+    &.hollow {
+        background-color: transparent;
+        color: $color;
+        border-color: $color;
+
+        &.selected, &.checked, &:hover, &:focus {
+            background-color: $color;
+            color: $font;
+        }
+    }
+}
+
+
+@mixin button-spacing($x, $y, $font) {
+  padding: $spacing*$x $spacing*$y;
+  font-size: $font-size*$font;
+}
+
+
 @mixin mobile-screen {
     @media only screen and (max-width: $mobile-screen) { @content; }
 }
 
 @mixin tablet-screen {
-    @media only screen and (min-width: $mobile-screen) and (max-width: $tablet-screen) { @content; }
+    @media only screen and (min-width: #{$mobile+1}px) and (max-width: $tablet-screen) { @content; }
 }
 
 @mixin laptop-screen {
-    @media only screen and (min-width: $tablet-screen) and (max-width: $laptop-screen) { @content; }
+    @media only screen and (min-width: #{$tablet+1}px) and (max-width: $laptop-screen) { @content; }
 }
 
 @mixin desktop-screen {
-    @media only screen and (min-width: $laptop-screen) and (max-width: $hd-screen) { @content; }
+    @media only screen and (min-width: #{$laptop+1}px) and (max-width: $hd-screen) { @content; }
 }
 
 @mixin hd-screen {
-    @media only screen and (min-width: $hd-screen) { @content; }
+    @media only screen and (min-width: #{$hd+1}px) { @content; }
 }
 
 @mixin grid-columns-twelve($columns) {
@@ -152,53 +213,25 @@
     display: inline-block;
 }
 
-// Prefixable reset for targetted hide classes
-@mixin display-elements-reset($prefix) {
+@mixin display-elements($prefix) {
 
-    .#{$prefix}only, .#{$prefix}only-inline, .#{$prefix}only-inline-block,
-    .#{$prefix}show, .#{$prefix}show-inline, .#{$prefix}show-inline-block
-    .#{$prefix}up-show, .#{$prefix}up-show-inline, .#{$prefix}up-show-inline-block, {
-        display: none;
-    }
+    [class*='#{$prefix}show'], [class*='#{$prefix}only'] {
 
-}
-
-@mixin display-only-elements($prefix) {
-
-    .#{$prefix}only {
         display: block;
     }
 
-    .#{$prefix}only-inline {
-        display: inline-block;
+    [class*='#{$prefix}show-inline'] {
+        display: inline;
     }
 
-    .#{$prefix}only-inline-block {
+    [class*='#{$prefix}show-inline-block'] {
         display: inline-block;
     }
-
 }
 
-@mixin display-show-elements($prefix) {
+@mixin hide-elements($prefix) {
 
-    .#{$prefix}show {
-        display: block;
-    }
-
-    .#{$prefix}show-inline {
-        display: inline-block;
-    }
-
-    .#{$prefix}show-inline-block {
-        display: inline-block;
-    }
-
-}
-
-// Prefixable targetted hide classes
-@mixin display-hide-elements($prefix) {
-
-    .#{$prefix}hide {
+    [class*='#{$prefix}hide'] {
         display: none;
     }
 

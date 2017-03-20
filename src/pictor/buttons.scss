@@ -22,7 +22,14 @@ button,
     white-space: nowrap;
 
     @include button-spacing($medium * 0.25, $medium, 1);
-    @include button-color($primary-color, $primary-color-font);
+    @include button-color(
+        $primary-color,
+        $primary-color-font,
+        $primary-color,
+        lighten($primary-color, 25%),
+        lighten($primary-color-font, 25%),
+        lighten($primary-color, 25%)
+    );
 
     &.tiny { @include button-spacing($tiny * 0.25, $tiny, 0.8); }
     &.small { @include button-spacing($small * 0.25, $small, 1); }

@@ -77,7 +77,7 @@ module.exports = function (grunt) {
 
     });
 
-    grunt.registerTask('default', ['sass', 'cssmin', 'http-server', 'watch']);
+    grunt.registerTask('default', ['sass', /*'cssmin',*/ 'http-server', 'watch']);
     grunt.registerTask('build', ['sass', 'cssmin']);
 
 };

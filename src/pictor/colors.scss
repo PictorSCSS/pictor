@@ -1,11 +1,25 @@
+
+/**
+ * Color Loop
+ *
+ * This function loops through code
+ */
+
+
+$c: '';
+
 @each $i in $colors {
+
     $name: nth($i, 1);
     $color: nth($i, 2);
     $font: nth($i, 3);
     $hover: nth($i, 4);
     $font-hover: nth($i, 5);
 
+    $c: $c + $name + ',' + $color + ',' + $font + ',' + $hover + ',' + $font-hover + '|';
+
     .#{$name}-bg {
+
         background-color: $color;
         color: $font;
 
@@ -16,18 +30,22 @@
     }
 
     .#{$name}-text {
+
         color: $color;
     }
 
     .#{$name}-border {
+
         border-color: $color;
     }
 
     a.#{$name} {
+
         @include link-color($color, $hover);
     }
 
     a.#{$name}-bg {
+
         @include link-background-color($color, $font, $hover, $font-hover);
     }
 
@@ -38,10 +56,16 @@
     [type='submit'] {
 
         &.#{$name} {
-            @include button-color($color, $font, $hover, $font-hover);
+
+            @include button-color($color, $font, $border, $hover, $font-hover, $hover);
         }
     }
 
 }
 
 
+// Sends colors to javascript
+meta.colors {
+
+    content: $c;
+}
