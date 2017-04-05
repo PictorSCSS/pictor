@@ -14,15 +14,15 @@ html {
   box-sizing: inherit;
 }
 
-// Columns applicable to all screens
-.grid-columns {
+// Twelve column grid
+.grid {
     @extend %gridreset;
     & > [class*='column'] { @extend %griditem; }
     @include gridcolumns('');
 }
 
-// Grids applicable to all screens
-.grid-items {
+// Fixed column width twelve column grid
+.grid-fw {
     @extend %gridreset;
     & > .item { @extend %griditem; }
     @include griditems('');
@@ -50,6 +50,7 @@ html {
     .grid-columns { @include gridcolumns($prefix); }
     .grid-items { @include griditems($prefix); }
 }
+
 @include tablet-screen {
     $prefix: 'tablet-';
     @include hide-elements($prefix);
@@ -61,6 +62,7 @@ html {
     .grid-columns { @include gridcolumns($prefix); }
     .grid-items { @include griditems($prefix); }
 }
+
 @include laptop-screen {
     $prefix: 'laptop-';
     @include hide-elements($prefix);
@@ -74,6 +76,7 @@ html {
     .grid-columns { @include gridcolumns($prefix); }
     .grid-items { @include griditems($prefix); }
 }
+
 @include desktop-screen {
     $prefix: 'desktop-';
     @include hide-elements($prefix);
@@ -88,6 +91,7 @@ html {
     .grid-columns { @include gridcolumns($prefix); }
     .grid-items { @include griditems($prefix); }
 }
+
 @include hd-screen {
     $prefix: 'hd-';
     @include hide-elements($prefix);
@@ -104,6 +108,7 @@ html {
     .grid-items { @include griditems($prefix); }
 }
 
+// Order of operations matter.
 .hide {
     display: none;
 }

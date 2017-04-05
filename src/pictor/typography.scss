@@ -10,21 +10,21 @@ body {
     line-height: $line-height;
 }
 
-h1 { font-size: $font-size * $minor-second * 2.25; }
-h2 { font-size: $font-size * $minor-second * 2; }
-h3 { font-size: $font-size * $minor-second * 1.75; }
-h4 { font-size: $font-size * $minor-second * 1.5; }
-h5 { font-size: $font-size * $minor-second * 1.25; }
-h6 { font-size: $font-size * $minor-second * 1; }
+h1 { font-size: $xl; }
+h2 { font-size: $lg; }
+h3 { font-size: $md; }
+h4 { font-size: $sm; }
+h5 { font-size: $xs; }
+h6 { font-size: $xs; }
 
 h1,h2,h3,h4,h5,h6 {
     font-family: $heading-font-family;
     font-weight: bold;
     line-height: $heading-line-height;
-    margin: 0 0 $small-spacing;
+    margin: 0 0 $sm-spacing;
     color: $heading-color;
 
-    &.sub-title, small {
+    &.sub-title, sm {
         font-weight: normal;
         color: darken($heading-color, 15%);
     }
@@ -32,16 +32,16 @@ h1,h2,h3,h4,h5,h6 {
 
 form { h1,h2,h3,h4,h5,h6 { margin: 0; } }
 
-small {
+sm {
     font-size: 0.7em;
     line-height: 1rem;
     font-weight: normal;
 }
 
-small.block { display: block; }
+sm.block { display: block; }
 
 p {
-    margin: 0 0 $small-spacing;
+    margin: 0 0 $sm-spacing;
 }
 
 a {
@@ -81,7 +81,7 @@ picture {
   max-width: 100%;
 }
 
-small {
+sm {
     font-size: 0.7rem;
 }
 

@@ -1,23 +1,4 @@
-// Scaling Variables
-$golden: 1.618 !default;
-$minor-second: 1.067 !default;
-$major-second: 1.125 !default;
-$minor-third: 1.2 !default;
-$major-third: 1.25 !default;
-$perfect-fourth: 1.333 !default;
-$augmented-fourth: 1.414 !default;
-$perfect-fifth: 1.5 !default;
-$minor-sixth: 1.6 !default;
-$major-sixth: 1.667 !default;
-$minor-seventh: 1.778 !default;
-$major-seventh: 1.875 !default;
-$octave: 2 !default;
-$major-tenth: 2.5 !default;
-$major-eleventh: 2.667 !default;
-$major-twelfth: 3 !default;
-$double-octave: 4 !default;
-
-$modular-scale: $golden !default;
+// Determines font sizes, spacing, and more
 $base-scale: 16 !default;
 
 // Breakpoints raw numbers
@@ -38,7 +19,8 @@ $hd-screen: unquote("#{$hd}px");
 $max-width: $laptop-screen !default;
 
 // Typography
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i,700');
+$font-url: 'https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i,700';
+@import url($font-url);
 
 $font-family: 'Ubuntu Mono', monospace !default;
 $heading-font-family: $font-family !default;
@@ -53,14 +35,14 @@ $heading-line-height: 1.5 !default;
 // Other Sizes
 $border-radius: 5px !default;
 $spacing: $line-height * $font-size !default;
-$small-spacing: $spacing / 2 !default;
+$sm-spacing: $spacing / 2 !default;
 $z-index: 0 !default;
 
-// Font Colors
-$font-color: $medium-gray !default;
+// Font Color
+$font-color: $dark-gray !default;
 
 // Headings
-$heading-color: $dark-gray !default;
+$heading-color: mix($dark-gray, $primary-color, 50%) !default;
 
 // Border
 $border-width: 1px !default;
@@ -77,10 +59,10 @@ $duration: 150ms !default;
 $timing: ease-in-out !default;
 
 // Sizes
-$tiny: 0.25 * $base-scale/10 !default;
-$small: 0.5 * $base-scale/10 !default;
-$medium: 0.75 * $base-scale/10 !default;
-$large: 1 * $base-scale/10 !default;
-$huge: 1.5 * $base-scale/10 !default;
+$xs: 0.25 * $font-size !default;
+$sm: 0.5 * $font-size !default;
+$md: 1 * $font-size !default;
+$lg: 1.25 * $font-size !default;
+$xl: 2 * $font-size !default;
 
 

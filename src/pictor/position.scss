@@ -8,9 +8,9 @@
 
 .clearfix { &, &:before, &:after { clear: both; } }
 
-.valign-top { vertical-align: top;}
-.valign-middle { vertical-align: middle;}
-.valign-bottom { vertical-align: bottom;}
+.valign-t { vertical-align: top;}
+.valign-m { vertical-align: middle;}
+.valign-b { vertical-align: bottom;}
 
 .relative { position: relative; }
 .absolute { position: absolute; }
@@ -38,13 +38,18 @@
 .top-100px { top: 100px; } .bottom-100px { bottom: 100px; } .left-100px { left: 100px; } .right-100px { right: 100px; }
 .top-300px { top: 300px; } .bottom-300px { bottom: 300px; } .left-300px { left: 300px; } .right-300px { right: 300px; }
 
-.display-none { display: none; }
-.display-block { display: block; }
-.display-inline-block { display: inline-block; }
-.display-inline { display: inline; }
+.pos-t { top: 0; left: 0; right: 0; }
+.pos-b { bottom: 0; left: 0; right: 0; }
+.pos-l { top: 0; bottom: 0; left: 0; }
+.pos-r { top: 0; bottom: 0; right: 0; }
+
+.hide { display: none; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline { display: inline; }
 
 .float-left { float: left; }
 .float-right { float: right; }
 
-.element-center { margin-left: auto; margin-right: auto; }
+.centered { margin-left: auto; margin-right: auto; }
 

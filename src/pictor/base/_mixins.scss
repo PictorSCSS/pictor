@@ -54,8 +54,8 @@
 
 
 @mixin button-spacing($x, $y, $font) {
-  padding: $spacing*$x $spacing*$y;
-  font-size: $font-size*$font;
+  padding: $x $y;
+  font-size: $font * $font-size;
 }
 
 

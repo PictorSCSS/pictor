@@ -2,17 +2,12 @@
 
 /** Mixins */
 
-@mixin font-size($size) {
-    font-size: $font-size * $size;
-}
-
 /** Text Helpers */
-
-.font-size-tiny { @include font-size($tiny*1.5); }
-.font-size-small { @include font-size($small); }
-.font-size-medium { @include font-size($medium); }
-.font-size-large { @include font-size($large); }
-.font-size-huge { @include font-size($huge); }
+.font-xs { font-size: $xs*1.5; }
+.font-sm { font-size: $sm; }
+.font-md { font-size: $md; }
+.font-lg { font-size: $lg; }
+.font-xl { font-size: $xl; }
 
 .text-left { text-align: left; }
 .text-center { text-align: center; }

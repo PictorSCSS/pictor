@@ -39,14 +39,14 @@ fieldset {
 
 legend {
     font-weight: 600;
-    margin-bottom: $small-spacing / 2;
+    margin-bottom: $sm-spacing / 2;
     padding: 0;
 }
 
 label {
     display: block;
     font-weight: 600;
-    margin-bottom: $small-spacing / 2;
+    margin-bottom: $sm-spacing / 2;
 }
 
 input,
@@ -63,7 +63,7 @@ textarea {
     border-radius: $border-radius;
     box-shadow: 0 5px 10px -2px darken($background-color, 20%);
     box-sizing: border-box;
-    margin-bottom: $small-spacing;
+    margin-bottom: $sm-spacing;
     padding: $spacing / 3;
     transition: all $duration $timing;
     width: 100%;
@@ -83,11 +83,11 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
     display: inline;
-    margin-right: $small-spacing / 2;
+    margin-right: $sm-spacing / 2;
 }
 
 [type="file"] {
-    margin-bottom: $small-spacing;
+    margin-bottom: $sm-spacing;
     width: 100%;
 }
 

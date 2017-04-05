@@ -21,7 +21,7 @@ button,
     vertical-align: middle;
     white-space: nowrap;
 
-    @include button-spacing($medium * 0.25, $medium, 1);
+    @include button-spacing($md * 0.25, $md, 1);
     @include button-color(
         $primary-color,
         $primary-color-font,
@@ -31,14 +31,16 @@ button,
         lighten($primary-color, 25%)
     );
 
-    &.tiny { @include button-spacing($tiny * 0.25, $tiny, 0.8); }
-    &.small { @include button-spacing($small * 0.25, $small, 1); }
-    &.large { @include button-spacing($large * 0.25, $large, 1.25); }
-    &.huge { @include button-spacing($huge * 0.25, $huge, 1.5); }
+    &.xs { @include button-spacing($xs * 0.25, $xs, 0.8); }
+    &.sm { @include button-spacing($sm * 0.25, $sm, 1); }
+    &.md { @include button-spacing($md * 0.25, $md, 1.25); }
+    &.lg { @include button-spacing($lg * 0.25, $lg, 1.25); }
+    &.xl { @include button-spacing($xl * 0.25, $xl, 1.5); }
 
-    &.tiny-icon { @include button-spacing($tiny, $tiny, 0.8); }
-    &.small-icon { @include button-spacing($small, $small, 1); }
-    &.large-icon { @include button-spacing($large, $large, 1.25); }
-    &.huge-icon { @include button-spacing($huge, $huge, 1.5); }
+    &.xs-icon { @include button-spacing($xs, $xs, 0.8); }
+    &.sm-icon { @include button-spacing($sm, $sm, 1); }
+    &.md-icon { @include button-spacing($md, $md, 1.25); }
+    &.lg-icon { @include button-spacing($lg, $lg, 1.25); }
+    &.xl-icon { @include button-spacing($xl, $xl, 1.5); }
 
 }

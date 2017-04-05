@@ -22,11 +22,12 @@ $c: '';
 
         background-color: $color;
         color: $font;
+    }
 
-        &:hover {
-            background-color: $hover;
-            color: $font-hover;
-        }
+    .#{$name}-light-bg {
+
+        background-color: mix(#fff, $color, 80%);
+        color: $color;
     }
 
     .#{$name}-text {
