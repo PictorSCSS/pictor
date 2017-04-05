@@ -14,7 +14,7 @@ button,
     font-size: $font-size;
     -webkit-font-smoothing: antialiased;
     font-weight: 600;
-    line-height: 1;
+    line-height: 1em;
     text-decoration: none;
     transition: all $duration $timing;
     user-select: none;
@@ -39,8 +39,8 @@ button,
 
     &.xs-icon { @include button-spacing($xs, $xs, 0.8); }
     &.sm-icon { @include button-spacing($sm, $sm, 1); }
-    &.md-icon { @include button-spacing($md, $md, 1.25); }
-    &.lg-icon { @include button-spacing($lg, $lg, 1.25); }
-    &.xl-icon { @include button-spacing($xl, $xl, 1.5); }
+    &.md-icon { @include button-spacing($sm, $sm, 1.5); }
+    &.lg-icon { @include button-spacing($sm, $sm, 2); }
+    &.xl-icon { @include button-spacing($sm, $sm, 2.5); }
 
 }

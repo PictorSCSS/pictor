@@ -21,16 +21,16 @@ $red: #DD1F1F !default;          $red-font: $white !default;
 
 
 // Action colors
-$primary-color: #EF3B3A !default;                    $primary-color-font: $white !default;
-$secondary-color: #333333 !default;                  $secondary-color-font: $white !default;
-$default-color: #555555 !default;                    $default-color-font: $white !default;
-$success-color: mix($green, $black, 85%) !default;   $success-color-font: $white !default;
-$error-color: mix($red, $black, 85%) !default;       $error-color-font: $white !default;
-$warning-color: mix($yellow, $black, 85%) !default;  $warning-color-font: $white !default;
-$info-color: mix($blue, $black, 85%) !default;       $info-color-font: $white !default;
+$primary-color: $blue !default;                       $primary-color-font: $white !default;
+$secondary-color: mix(#000, $primary-color, 50%) !default; $secondary-color-font: $white !default;
+$default-color: #555555 !default;                       $default-color-font: $white !default;
+$success-color: mix($green, $black, 85%) !default;      $success-color-font: $white !default;
+$error-color: mix($red, $black, 85%) !default;          $error-color-font: $white !default;
+$warning-color: mix($yellow, $black, 85%) !default;     $warning-color-font: $white !default;
+$info-color: mix($blue, $black, 85%) !default;          $info-color-font: $white !default;
 
 
-// Colors
+// Colors array. Used in color loop.
 // (
 //      name,
 //      color,
@@ -41,34 +41,34 @@ $colors:
 
     (
         'success',
-        mix(#5EB546, #000, 85%),
-        #ffffff,
-        darken(mix(#5EB546, #000, 85%), 10%),
-        #fff
+        $success-color,
+        $success-color-font,
+        darken($success-color, 10%),
+        $success-color-font
     ),
 
     (
         'error',
-        mix(#DD1F1F, #000, 85%),
-        #ffffff,
-        darken(mix(#DD1F1F, #000, 85%), 10%),
-        #fff
+        $error-color,
+        $error-color-font,
+        darken($error-color, 10%),
+        $error-color-font
     ),
 
     (
         'warning',
-        mix(#FEEA3F, #000, 85%),
-        #ffffff,
-        darken(mix(#FEEA3F, #000, 85%), 10%),
-        #fff
+        $warning-color,
+        $warning-color-font,
+        darken($warning-color, 10%),
+        $warning-color-font
     ),
 
     (
         'info',
-        mix(#005F94, #000, 85%),
-        #ffffff,
-        darken(mix(#005F94, #000, 85%), 10%),
-        #fff
+        $info-color,
+        $info-color-font,
+        darken($info-color, 10%),
+        $info-color-font
     ),
 
 
@@ -77,17 +77,17 @@ $colors:
 
     (
         'primary',
-        #EF3B3A,
-        #ffffff,
-        lighten(#EF3B3A, 10%),
-        #ffffff
+        $primary-color,
+        $primary-color-font,
+        lighten($primary-color, 10%),
+        $primary-color-font
     ),
     (
         'secondary',
-        #444444,
-        #ffffff,
-        lighten(#444444, 10%),
-        #ffffff
+        $secondary-color,
+        $secondary-color-font,
+        lighten($secondary-color, 10%),
+        $secondary-color-font
     ),
     (
         'default',

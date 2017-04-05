@@ -47,8 +47,10 @@ html {
     @include display-elements($prefix);
     @include display-elements($prefix+'up-');
 
-    .grid-columns { @include gridcolumns($prefix); }
-    .grid-items { @include griditems($prefix); }
+    .container { width: $mobile-screen; }
+
+    .grid { @include gridcolumns($prefix); }
+    .grid-fw { @include griditems($prefix); }
 }
 
 @include tablet-screen {
@@ -59,8 +61,10 @@ html {
 
     @include display-elements('mobile-up-');
 
-    .grid-columns { @include gridcolumns($prefix); }
-    .grid-items { @include griditems($prefix); }
+    .container { width: $tablet-screen; }
+
+    .grid { @include gridcolumns($prefix); }
+    .grid-fw { @include griditems($prefix); }
 }
 
 @include laptop-screen {
@@ -72,9 +76,10 @@ html {
     @include display-elements('mobile-up-');
     @include display-elements('tablet-up-');
 
+    .container { width: $laptop-screen; }
 
-    .grid-columns { @include gridcolumns($prefix); }
-    .grid-items { @include griditems($prefix); }
+    .grid { @include gridcolumns($prefix); }
+    .grid-fw { @include griditems($prefix); }
 }
 
 @include desktop-screen {
@@ -87,9 +92,10 @@ html {
     @include display-elements('tablet-up-');
     @include display-elements('laptop-up-');
 
+    .container { width: $desktop-screen; }
 
-    .grid-columns { @include gridcolumns($prefix); }
-    .grid-items { @include griditems($prefix); }
+    .grid { @include gridcolumns($prefix); }
+    .grid-fw { @include griditems($prefix); }
 }
 
 @include hd-screen {
@@ -103,9 +109,10 @@ html {
     @include display-elements('laptop-up-');
     @include display-elements('desktop-up-');
 
+    .container { width: $hd-screen; }
 
-    .grid-columns { @include gridcolumns($prefix); }
-    .grid-items { @include griditems($prefix); }
+    .grid { @include gridcolumns($prefix); }
+    .grid-fw { @include griditems($prefix); }
 }
 
 // Order of operations matter.

@@ -29,6 +29,14 @@ ol {
     &.upper-latin {list-style-type: upper-latin; }
     &.upper-roman {list-style-type: upper-roman; }
 
+    &.spacing {
+        &.xs li { margin-bottom: $xs; }
+        &.sm li { margin-bottom: $sm; }
+        &.md li { margin-bottom: $md; }
+        &.lg li { margin-bottom: $lg; }
+        &.xl li { margin-bottom: $xl; }
+    }
+
 }
 
 dl {

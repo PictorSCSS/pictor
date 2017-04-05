@@ -10,12 +10,12 @@ body {
     line-height: $line-height;
 }
 
-h1 { font-size: $xl; }
-h2 { font-size: $lg; }
-h3 { font-size: $md; }
-h4 { font-size: $sm; }
-h5 { font-size: $xs; }
-h6 { font-size: $xs; }
+h1 { font-size: $xl + 10; }
+h2 { font-size: $lg + 10; }
+h3 { font-size: $md + 10; }
+h4 { font-size: $sm + 10; }
+h5 { font-size: $xs + 10; }
+h6 { font-size: $xs + 10; }
 
 h1,h2,h3,h4,h5,h6 {
     font-family: $heading-font-family;
@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0 0 $sm-spacing;
     color: $heading-color;
 
-    &.sub-title, sm {
+    &.sub-title, small {
         font-weight: normal;
         color: darken($heading-color, 15%);
     }
@@ -32,16 +32,14 @@ h1,h2,h3,h4,h5,h6 {
 
 form { h1,h2,h3,h4,h5,h6 { margin: 0; } }
 
-sm {
+small {
     font-size: 0.7em;
     line-height: 1rem;
     font-weight: normal;
 }
 
-sm.block { display: block; }
-
 p {
-    margin: 0 0 $sm-spacing;
+    margin: 0 0 $md;
 }
 
 a {

@@ -42,7 +42,7 @@ $z-index: 0 !default;
 $font-color: $dark-gray !default;
 
 // Headings
-$heading-color: mix($dark-gray, $primary-color, 50%) !default;
+$heading-color: $primary-color !default;
 
 // Border
 $border-width: 1px !default;
