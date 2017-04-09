@@ -4,14 +4,14 @@ $black: #161616 !default;        $black-font: #ffffff !default;
 $white: #f2f2f2 !default;        $white-font: $black !default;
 $white0: #ffffff !default;       $white0-font: $black0 !default;
 $dark-gray: #333333 !default;    $dark-gray-font: $white !default;
-$medium-gray: #777777 !default;      $medium-gray-font: $white !default;
+$medium-gray: #777777 !default;  $medium-gray-font: $white !default;
 $light-gray: #dddddd !default;   $light-gray-font: $black !default;
 $pink: #F96793 !default;         $pink-font: $white !default;
 $magenta: #E533A2 !default;      $magenta-font: $white !default;
 $purple: #B133E5 !default;       $purple-font: $white !default;
 $indigo: #4A53CC !default;       $indigo-font: $white !default;
 $blue: #005F94 !default;         $blue-font: $white !default;
-$cyan: #4EDDDD !default;         $cyan-font: #000 !default;
+$cyan: #4EDDDD !default;         $cyan-font: $black !default;
 $green: #5EB546 !default;        $green-font: $white !default;
 $lime: #BCD631 !default;         $lime-font: $black !default;
 $yellow: #FEEA3F !default;       $yellow-font: $black !default;
@@ -43,33 +43,33 @@ $colors:
         'success',
         $success-color,
         $success-color-font,
-        darken($success-color, 10%),
+        darken($success-color, 15%),
         $success-color-font
     ),
-
     (
         'error',
         $error-color,
         $error-color-font,
-        darken($error-color, 10%),
+        darken($error-color, 15%),
         $error-color-font
     ),
-
     (
         'warning',
         $warning-color,
         $warning-color-font,
-        darken($warning-color, 10%),
+        darken($warning-color, 15%),
         $warning-color-font
     ),
-
     (
         'info',
         $info-color,
         $info-color-font,
-        darken($info-color, 10%),
+        darken($info-color, 15%),
         $info-color-font
     ),
+
+
+
 
 
 
@@ -79,161 +79,170 @@ $colors:
         'primary',
         $primary-color,
         $primary-color-font,
-        lighten($primary-color, 10%),
+        lighten($primary-color, 15%),
         $primary-color-font
     ),
     (
         'secondary',
         $secondary-color,
         $secondary-color-font,
-        lighten($secondary-color, 10%),
+        lighten($secondary-color, 15%),
         $secondary-color-font
     ),
     (
         'default',
-        #999999,
-        #ffffff,
-        lighten(#999999, 10%),
-        #ffffff
+        $default-color,
+        $default-color-font,
+        lighten($default-color, 15%),
+        $default-color-font
     ),
+
+
+
 
 
 
 
     (
         'black0',
-        #000000,
-        #ffffff,
-        darken(#000000, 10%),
-        darken(#ffffff, 10%)
+        $black0,
+        $black0-font,
+        lighten($black0, 15%),
+        lighten($black0-font, 15%)
     ),
     (
         'black',
-        #161616,
-        #ffffff,
-        darken(#161616, 10%),
-        darken(#ffffff, 10%)
+        $black,
+        $black-font,
+        lighten($black, 15%),
+        lighten($black-font, 15%)
     ),
     (
         'white',
-        #f2f2f2,
-        #000,
-        darken(#f2f2f2, 10%),
-        darken(#000, 10%),
+        $white,
+        $white-font,
+        darken($white, 15%),
+        darken($white-font, 15%),
     ),
     (
         'white0',
-        #ffffff,
-        #000,
-        darken(#ffffff, 10%),
-        darken(#000, 10%)
+        $white0,
+        $white0-font,
+        darken($white0, 15%),
+        darken($white0-font, 15%)
     ),
     (
         'dark-gray',
-        #333333,
-        #fff,
-        darken(#333333, 10%),
-        darken(#fff, 10%),
+        $dark-gray,
+        $dark-gray-font,
+        lighten($dark-gray, 15%),
+        lighten($dark-gray-font, 15%),
     ),
     (
         'medium-gray',
-        #777777,
-        #fff,
-        darken(#777777, 10%),
-        darken(#fff, 10%),
+        $medium-gray,
+        $medium-gray-font,
+        lighten($medium-gray, 15%),
+        lighten($medium-gray-font, 15%),
     ),
     (
         'light-gray',
-        #dddddd,
-        #000,
-        darken(#dddddd, 10%),
-        darken(#000, 10%),
+        $light-gray,
+        $light-gray-font,
+        darken($light-gray, 15%),
+        darken($light-gray-font, 15%),
     ),
+
+
+
+
+
+
+
     (
         'pink',
-        #F96793,
-        mix(#F96793, #fff, 30%),
-        darken(#F96793, 10%),
-        darken(mix(#F96793, #fff, 30%), 10%)
+        $pink,
+        mix($pink-font, #fff, 30%),
+        darken($pink, 15%),
+        $pink-font
     ),
     (
         'magenta',
-        #E533A2,
-        mix(#E533A2, #fff, 30%),
-        darken(#E533A2, 10%),
-        darken(mix(#E533A2, #fff, 30%), 10%)
+        $magenta,
+        mix($magenta-font, #fff, 30%),
+        lighten($magenta, 15%),
+        $magenta-font
     ),
     (
         'purple',
-        #B133E5,
-        mix(#B133E5, #fff, 30%),
-        darken(#B133E5, 10%),
-        darken(mix(#B133E5, #fff, 30%), 10%)
+        $purple,
+        mix($purple-font, #fff, 30%),
+        lighten($purple, 15%),
+        $purple-font
     ),
     (
         'indigo',
-        #4A53CC,
-        mix(#4A53CC, #fff, 30%),
-        darken(#4A53CC, 10%),
-        darken(mix(#4A53CC, #fff, 30%), 10%)
+        $indigo,
+        mix($indigo-font, #fff, 30%),
+        lighten($indigo, 15%),
+        $indigo-font
     ),
     (
         'blue',
-        #005F94,
-        mix(#005F94, #fff, 30%),
-        darken(#005F94, 10%),
-        darken(mix(#005F94, #fff, 30%), 10%)
+        $blue,
+        mix($blue-font, #fff, 30%),
+        lighten($blue, 15%),
+        $blue-font
     ),
     (
         'cyan',
-        #4EDDDD,
-        mix(#4EDDDD, #000, 30%),
-        darken(#4EDDDD, 10%),
-        darken(mix(#4EDDDD, #000, 30%), 10%)
+        $cyan,
+        mix($cyan-font, #000, 30%),
+        lighten($cyan, 15%),
+        $cyan-font
     ),
     (
         'green',
-        #5EB546,
-        mix(#5EB546, #fff, 30%),
-        darken(#5EB546, 10%),
-        darken(mix(#5EB546, #fff, 30%), 10%)
+        $green,
+        mix($green-font, #fff, 30%),
+        lighten($green, 15%),
+        $green-font
     ),
     (
         'lime',
-        #BCD631,
-        mix(#BCD631, #000, 30%),
-        darken(#BCD631, 10%),
-        darken(mix(#BCD631, #000, 30%), 10%)
+        $lime,
+        mix($lime-font, #000, 30%),
+        lighten($lime, 15%),
+        $lime-font
     ),
     (
         'yellow',
-        #FEEA3F,
-        mix(#FEEA3F, #000, 30%),
-        darken(#FEEA3F, 10%),
-        darken(mix(#FEEA3F, #000, 30%), 10%)
+        $yellow,
+        mix($yellow-font, #000, 30%),
+        lighten($yellow, 15%),
+        $yellow-font
     ),
     (
         'orange',
-        #FF9800,
-        mix(#FF9800, #000, 30%),
-        darken(#FF9800, 10%),
-        darken(mix(#FF9800, #000, 30%), 10%)
+        $orange,
+        mix($orange-font, #000, 30%),
+        lighten($orange, 15%),
+        $orange-font
     ),
     (
         'red-orange',
-        #F26722,
-        mix(#F26722, #fff, 30%),
-        darken(#F26722, 10%),
-        darken(mix(#F26722, #fff, 30%), 10%)
+        $red-orange,
+        mix($red-orange-font, #fff, 30%),
+        lighten($red-orange, 15%),
+        $red-orange-font
     ),
     (
         'red',
-        #DD1F1F,
-        mix(#DD1F1F, #fff, 30%),
-        darken(#DD1F1F, 10%),
-        darken(mix(#DD1F1F, #fff, 30%), 10%)
-    ),
-
+        $red,
+        mix($red-font, #fff, 30%),
+        lighten($red, 15%),
+        $red-font
+    )
 ;
 
 

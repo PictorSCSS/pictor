@@ -19,7 +19,7 @@ $hd-screen: unquote("#{$hd}px");
 $max-width: $laptop-screen !default;
 
 // Typography
-$font-url: 'https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i,700';
+$font-url: 'https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i,700' !default;
 @import url($font-url);
 
 $font-family: 'Ubuntu Mono', monospace !default;
