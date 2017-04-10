@@ -9,3 +9,18 @@
 .max-width-laptop { max-width: $laptop-screen; }
 .max-width-desktop { max-width: $desktop-screen; }
 .max-width-hd { max-width: $hd-screen; }
+
+// Fixed width per screen size
+.width-mobile { width: $mobile-screen; }
+.width-tablet { width: $tablet-screen; }
+.width-laptop { width: $laptop-screen; }
+.width-desktop { width: $desktop-screen; }
+.width-hd { width: $hd-screen; }
+
+// Fixed width by size variable
+.width-xs { width: $xs * 10; } // Defaults to 40
+.width-sm { width: $sm * 10; } // Defaults to 80
+.width-md { width: $md * 10; } // Defaults to 160
+.width-lg { width: $lg * 10; } // Defaults to 200
+.width-xl { width: $xl * 10; } // Defaults to 320
+
