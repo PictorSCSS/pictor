@@ -18,11 +18,15 @@ $c: '';
 
     $c: $c + $name + ',' + $color + ',' + $font + ',' + $hover + ',' + $font-hover + '|';
 
-    .#{$name}-bg {
+    [class=#{$name}-bg] {
 
-        background-color: $color;
         color: $font;
     }
+
+    .#{$name}-bg { background-color: $color; }
+    .#{$name}-bg-o-75 { background-color: rgba($color, 0.75); }
+    .#{$name}-bg-o-50 { background-color: rgba($color, 0.50); }
+    .#{$name}-bg-o-25 { background-color: rgba($color, 0.25); }
 
     .#{$name}-light-bg {
 
