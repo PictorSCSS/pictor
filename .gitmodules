@@ -1,3 +1,3 @@
-[submodule "documentation"]
+[submodule "pictorscss.github.io"]
 	path = docs
 	url = git@github.com:PictorSCSS/pictorscss.github.io.git
