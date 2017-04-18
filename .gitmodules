@@ -1,0 +1,3 @@
+[submodule "documentation"]
+	path = docs
+	url = git@github.com:PictorSCSS/pictorscss.github.io.git
