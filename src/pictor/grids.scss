@@ -43,7 +43,6 @@ html {
 // Includes columns, grid, and hide elements
 @include mobile-screen {
     $prefix: 'mobile-';
-    @include hide-elements($prefix);
     @include display-elements($prefix);
     @include display-elements($prefix+'up-');
 
@@ -55,7 +54,6 @@ html {
 
 @include tablet-screen {
     $prefix: 'tablet-';
-    @include hide-elements($prefix);
     @include display-elements($prefix);
     @include display-elements($prefix+'up-');
 
@@ -69,7 +67,6 @@ html {
 
 @include laptop-screen {
     $prefix: 'laptop-';
-    @include hide-elements($prefix);
     @include display-elements($prefix);
     @include display-elements($prefix+'up-');
 
@@ -84,7 +81,6 @@ html {
 
 @include desktop-screen {
     $prefix: 'desktop-';
-    @include hide-elements($prefix);
     @include display-elements($prefix);
     @include display-elements($prefix+'up-');
 
@@ -100,7 +96,6 @@ html {
 
 @include hd-screen {
     $prefix: 'hd-';
-    @include hide-elements($prefix);
     @include display-elements($prefix);
     @include display-elements($prefix+'up-');
 

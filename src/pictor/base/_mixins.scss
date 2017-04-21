@@ -227,12 +227,9 @@
     [class*='#{$prefix}show-inline-block'] {
         display: inline-block;
     }
-}
-
-@mixin hide-elements($prefix) {
 
     [class*='#{$prefix}hide'] {
         display: none;
     }
-
 }
+
