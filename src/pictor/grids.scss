@@ -43,59 +43,70 @@ html {
 // Includes columns, grid, and hide elements
 @include mobile-screen {
     $prefix: 'mobile-';
-    @include display-elements($prefix);
-    @include display-elements($prefix+'up-');
 
     .container { width: $mobile-screen; }
 
     .grid { @include gridcolumns($prefix); }
     .grid-fw { @include griditems($prefix); }
+
+    @include display-elements($prefix);
+    @include display-elements($prefix+'up-');
 }
 
 @include tablet-screen {
     $prefix: 'tablet-';
-    @include display-elements($prefix);
-    @include display-elements($prefix+'up-');
-
-    @include display-elements('mobile-up-');
 
     .container { width: $tablet-screen; }
 
     .grid { @include gridcolumns($prefix); }
     .grid-fw { @include griditems($prefix); }
-}
 
-@include laptop-screen {
-    $prefix: 'laptop-';
     @include display-elements($prefix);
     @include display-elements($prefix+'up-');
 
     @include display-elements('mobile-up-');
-    @include display-elements('tablet-up-');
+
+}
+
+@include laptop-screen {
+    $prefix: 'laptop-';
 
     .container { width: $laptop-screen; }
 
     .grid { @include gridcolumns($prefix); }
     .grid-fw { @include griditems($prefix); }
+
+    @include display-elements($prefix);
+    @include display-elements($prefix+'up-');
+
+    @include display-elements('mobile-up-');
+    @include display-elements('tablet-up-');
 }
 
 @include desktop-screen {
     $prefix: 'desktop-';
+
+    .container { width: $desktop-screen; }
+
+    .grid { @include gridcolumns($prefix); }
+    .grid-fw { @include griditems($prefix); }
+
     @include display-elements($prefix);
     @include display-elements($prefix+'up-');
 
     @include display-elements('mobile-up-');
     @include display-elements('tablet-up-');
     @include display-elements('laptop-up-');
-
-    .container { width: $desktop-screen; }
-
-    .grid { @include gridcolumns($prefix); }
-    .grid-fw { @include griditems($prefix); }
 }
 
 @include hd-screen {
     $prefix: 'hd-';
+
+    .container { width: $hd-screen; }
+
+    .grid { @include gridcolumns($prefix); }
+    .grid-fw { @include griditems($prefix); }
+
     @include display-elements($prefix);
     @include display-elements($prefix+'up-');
 
@@ -104,10 +115,6 @@ html {
     @include display-elements('laptop-up-');
     @include display-elements('desktop-up-');
 
-    .container { width: $hd-screen; }
-
-    .grid { @include gridcolumns($prefix); }
-    .grid-fw { @include griditems($prefix); }
 }
 
 // Order of operations matter.
