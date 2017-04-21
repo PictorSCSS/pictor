@@ -217,19 +217,19 @@
 
     [class*='#{$prefix}show'], [class*='#{$prefix}only'] {
 
-        display: block;
+        display: block !important;
     }
 
     [class*='#{$prefix}show-inline'] {
-        display: inline;
+        display: inline !important;
     }
 
     [class*='#{$prefix}show-inline-block'] {
-        display: inline-block;
+        display: inline-block !important;
     }
 
     [class*='#{$prefix}hide'] {
-        display: none;
+        display: none !important;
     }
 }
 
