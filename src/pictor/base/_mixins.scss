@@ -31,7 +31,7 @@
 
     background-color: $color;
     border-color: $color;
-    border-width: $font-size/4;
+    border-width: $border-width;
     color: $font;
 
     &.selected, &.checked, &:hover, &:focus {

@@ -8,9 +8,21 @@
 
 .clearfix { &, &:before, &:after { clear: both; } }
 
-.valign-t { vertical-align: top;}
-.valign-m { vertical-align: middle;}
-.valign-b { vertical-align: bottom;}
+.valign-t {
+
+    &, &.valign-all *, &.valign-children > * { vertical-align: top; }
+
+}
+.valign-m {
+
+    &, &.valign-all *, &.valign-children > * { vertical-align: middle; }
+
+}
+.valign-b {
+
+    &, &.valign-all *, &.valign-children > * { vertical-align: bottom; }
+
+}
 
 .relative { position: relative; }
 .absolute { position: absolute; }
