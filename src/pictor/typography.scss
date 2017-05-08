@@ -87,3 +87,10 @@ sm {
 strong, b { font-weight: bolder; }
 em, i:not(.fa) { font-style: italic; }
 
+pre {
+    white-space: normal;
+
+    code {
+        white-space: pre;
+    }
+}
