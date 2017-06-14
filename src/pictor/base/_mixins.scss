@@ -27,7 +27,7 @@
 }
 
 
-@mixin button-color($color, $font, $border, $hover, $font-hover, $border) {
+@mixin button-color($color, $font, $border, $hover, $font-hover, $border-hover) {
 
     background-color: $color;
     border-color: $color;
@@ -36,7 +36,7 @@
 
     &.selected, &.checked, &:hover, &:focus {
         background-color: $hover;
-        border-color: $hover;
+        border-color: $border-hover;
         color: $font-hover;
     }
 
